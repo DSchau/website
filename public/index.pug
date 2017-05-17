@@ -1,0 +1,89 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    title Dustin Schau - Developer of things
+    meta(name="description", content="")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="theme-color", content="#FF6138")
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,700", rel="stylesheet")
+    link(rel="manifest", href="./manifest.json")
+  body
+    // Oh hi, look at you all up in my business inspecting my source and what not. Well... welcome :) If you'd ever like to chat, reach out to me at dustinschau at gmail dot com, and let's talk!
+    // tech used
+    //
+     - Particles.js
+     - ityped
+     - Sass
+     - pug
+     - Webpack
+     - AWS Lamda
+     - Serverless
+     - Years of experience screwing around on these damn internet machines
+    main#fold(role="main")
+      header#header
+        .hero
+          h1.name Dustin Schau
+          h2.description I design and create 
+            span#example
+            |, typically using javascript
+
+      .social
+        a.github(href="https://github.com/dschau", target="_blank", rel="noopener")
+          i.icon.icon-github-circled(aria-hidden="true")
+        a.twitter(href="https://twitter.com/schaudustin", target="_blank", rel="noopener")
+          i.icon.icon-twitter(aria-hidden="true")
+
+      #particles
+
+      .learn-more-container
+        a(href="#below-the-fold", role="navigation", data-scroll)
+          span.text Want to learn more?
+          i.icon.icon-down-open(aria-hidden="true")
+    #below-the-fold(role="complementary")
+      section#expertise
+        .heading
+          h2.title My skills
+        .content
+          ul.group
+            li.item
+              .image.image-ideas
+              .overlay
+                h3.item-title Design
+                .icon.icon-lightbulb
+            li.item
+              .image.image-coding
+              .overlay
+                h3.item-title Development
+                .icon.icon-code
+            li.item
+              .image.image-build-tooling
+              .overlay
+                h3.item-title Build tooling
+                .icon.icon-tools
+      section#work
+        .heading
+          h2.title My work
+        .content
+      section.more
+        .heading
+          h2.title More
+        .content
+      section#contact
+        .heading
+          h2.title Want to get in touch?
+        .content
+          form(id="contact-form", novalidate)
+            label(for="name") What's your name?
+              input(id="name", type="text", tabindex="1", aria-required="true")
+            label(for="message") What's on your mind?
+              textarea(id="message", type="text", rows="3", tabindex="2", aria-required="true")
+            button(type="submit", tabindex="3") Send it
+      footer(role="contentinfo")
+        h3.message Thanks for visiting! Keep in 
+          a(href="#contact-form", data-scroll) touch!
+          span.disclaimer &hellip; seriously, I mean it. I love getting e-mails, questions, comments, concerns.
+          span.disclaimer But wait&hellip; why would you be concerned? OK, maybe not 
+            em concerns! 
+            | The rest though!

@@ -1,0 +1,7 @@
+@function getColorFromBackgroundColor($bg-color) {
+    @if (lightness($bg-color) > 50) {
+    @return mix(black, $bg-color, 85%);
+  } @else {
+    @return mix(white, $bg-color, 85%);
+  }
+}

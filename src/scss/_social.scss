@@ -1,0 +1,36 @@
+@mixin social() {
+  .social {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 4;
+    padding: 0.5rem 1rem;
+    background: black;
+    background: linear-gradient(to bottom, $base-darken-color, rgba($base-darken-color, 0) 75%);
+    a {
+      display: inline-block;
+      margin-right: 1.5rem;
+      transition: transform 250ms ease-in-out, background-color 250ms ease-in, color 250ms ease-in;
+      text-align: center;
+      position: relative;
+      color: $blue-light;
+      background-color: mix(white, $base-color, 35%);
+      height: 40px;
+      width: 40px;
+      border-radius: 40px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        transform: scale(1.175);
+        transform-origin: center;
+        background-color: white;
+        color: $base-color;
+      }
+    }
+    .icon {
+      font-size: 28px;
+      line-height: 40px;
+    }
+  }
+}

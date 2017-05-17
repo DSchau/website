@@ -1,0 +1,11 @@
+{
+  "name": "Dustin Schau Landing Page",
+  "short_name": "DSchau",
+  "start_url": ".",
+  "display": "standalone",
+  "description": "The portfolio of the developer, Dustin Schau",
+  "background_color": "white",
+  "icons": [
+
+  ]
+}

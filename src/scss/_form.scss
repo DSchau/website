@@ -1,0 +1,93 @@
+$form-element-padding: 1rem;
+$form-element-font-size: 18px;
+$form-invalid-color: mix(red, $base-color, 60%);
+
+@mixin focus($color: $base-color) {
+  &:focus {
+    box-shadow: 0 0 8px rgba($color, 0.5);
+    border-color: rgba($color, 0.75); 
+  }
+}
+
+@mixin form() {
+  input, textarea {
+    width: 100%;
+    border: 1px solid transparent;
+    background-color: mix(white, $blue-light, 10%);
+    color: white;
+    margin: 0.5rem auto;
+    padding: $form-element-padding;
+    box-sizing: border-box;
+    outline: none;
+    font-size: $form-element-font-size;
+    transition: box-shadow 125ms ease-in-out, border 125ms ease-in-out;
+    position: relative;
+    &.invalid {
+      border-color: $form-invalid-color;
+      @include focus($form-invalid-color);
+    }
+    @include focus();
+  }
+  textarea {
+    resize: none;
+  }
+  label {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+    display: block;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  button {
+    display: block;
+    width: 80%;
+    padding: $form-element-padding;
+    border: 3px solid transparent;
+    background-color: $base-color;
+    outline: none;
+    color: $blue-dark;
+    font-size: $form-element-font-size * 1.2;
+    margin: 0.5rem auto;
+    transition: all 250ms ease-in-out;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:focus, &:hover {
+      transform: scale3d(1.125, 1.125, 1);
+      background-color: transparent;
+      border-color: $base-color;
+      color: $base-color;
+    }
+  }
+  .message.success {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: mix(white, mix(green, $blue-light, 50%), 25%);
+    width: 100%;
+    text-align: center;    
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+  }
+  form {
+    position: relative;
+    transition: opacity 250ms ease-in-out;
+    @media only screen and (min-width: #{$lg-breakpoint}) {
+      max-width: 50%;
+      margin: 0 auto;
+    }
+    &.hide {
+      label, button {
+        visibility: hidden;
+      }
+    }
+    &.pending {
+      opacity: 0.35;
+      user-select: none;
+    }
+  }
+}

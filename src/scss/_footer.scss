@@ -1,0 +1,33 @@
+@mixin footer() {
+  footer {
+    min-height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $contrast-color;
+    padding: 0.25rem 0.5rem;
+  }
+  .message {
+    font-weight: normal;
+    color: $blue-dark;
+    font-weight: bold;
+    a {
+      color: $blue-dark;
+      text-decoration: none;
+    }
+    .disclaimer {
+      color: $blue-light;
+      font-weight: normal;
+      font-size: 0.85rem;
+      padding-top: 0.5rem;
+      display: none;
+      &:last-child {
+        padding-top: 0.25rem;
+      }
+      @media only screen and (min-width: $lg-breakpoint) {
+        display: block;
+      }
+    }
+  }
+}

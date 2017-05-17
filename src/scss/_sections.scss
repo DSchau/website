@@ -1,0 +1,114 @@
+@mixin images() {
+  .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-color: $blue-light;
+    background-blend-mode: overlay;
+    filter: blur(3px);
+    transition: filter 250ms ease-in-out, transform 250ms ease-in-out, background-color 250ms ease-in-out;
+    &.image-ideas {
+      background-image: url('~/static/images/ideas.jpg');
+    }
+    &.image-coding {
+      background-image: url('~/static/images/coding.jpg');
+    }
+    &.image-build-tooling {
+      background-image: url('~/static/images/build-tooling.jpg');
+    }
+    &:hover {
+      background-color: transparent;
+      filter: none;
+      transform: scale(1.125);
+    }
+  }
+}
+
+@mixin sections($loop-count: 4) {
+  @include images();
+  section {
+    min-height: 100vh;
+    background-color: mix(black, white, 5%);
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    img {
+      display: block;
+      max-width: 100%;
+      filter: sepia() blur(5px);
+      transition: filter 450ms ease-in-out;
+      &:hover {
+        filter: none;
+      }
+    }
+    $difference: (100 / $loop-count) / 100;
+    $start-color: mix(white, $blue-light, 35%);
+    $end-color: $blue-dark;
+    @for $i from 1 through $loop-count {
+      &:nth-child(#{$i}) {
+        $bg-color: mix($end-color, $start-color, percentage($difference * $i));
+        background: linear-gradient(to top, mix($end-color, $bg-color, 15%), $bg-color 5%);
+        color: getColorFromBackgroundColor($bg-color);
+      }
+    }
+  }
+  .heading {
+    flex: 1
+  }
+  .heading, .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    flex: 3;
+    width: 100%;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .group {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    @media only screen and (min-width: #{$lg-breakpoint}) {
+      flex-direction: row;
+    }
+    .item {
+      padding: 5rem 0.5rem;
+      margin: 1rem 0.5rem;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .overlay {
+      position: relative;
+      pointer-events: none;
+      width: 100%;
+    }
+    .item-title {
+      font-size: 1.6rem;
+      margin: 0.5rem 0;
+    }
+    .icon {
+      font-size: 2rem;
+      color: white;
+    }
+  }
+}

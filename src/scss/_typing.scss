@@ -1,0 +1,16 @@
+@mixin typing() {
+  #example {
+    box-sizing: border-box;
+    color: white;
+    @media only screen and (min-width: 768px) {
+      padding: 0.5rem;
+      background-color: white;
+      color: $base-darken-color;
+    }
+  }
+
+  .ityped-cursor {
+    animation: blink 1s infinite;
+    opacity: 1;
+  }
+}
