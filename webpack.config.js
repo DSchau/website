@@ -24,6 +24,11 @@ module.exports = function config({ environment = 'production' } = {}) {
       filename: '[name].js',
       publicPath: '/'
     },
+    resolve: {
+      alias: {
+        static: path.join(__dirname, 'static')
+      }
+    },
     module: {
       rules: [
         {

@@ -11,13 +11,13 @@
     filter: blur(3px);
     transition: filter 250ms ease-in-out, transform 250ms ease-in-out, background-color 250ms ease-in-out;
     &.image-ideas {
-      background-image: url('~/static/images/ideas.jpg');
+      background-image: url('~static/images/ideas.jpg');
     }
     &.image-coding {
-      background-image: url('~/static/images/coding.jpg');
+      background-image: url('~static/images/coding.jpg');
     }
     &.image-build-tooling {
-      background-image: url('~/static/images/build-tooling.jpg');
+      background-image: url('~static/images/build-tooling.jpg');
     }
     &:hover {
       background-color: transparent;

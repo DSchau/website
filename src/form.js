@@ -1,4 +1,5 @@
-const FORM_URL = `https://rsfhb7bc1d.execute-api.us-east-1.amazonaws.com/production/email`;
+import { FORM_URL } from './constants/urls';
+
 let SUBMITTED = false;
 
 export function validate(inputs = ['name', 'message'], invalidClassName = 'invalid') {
