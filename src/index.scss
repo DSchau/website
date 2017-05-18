@@ -18,6 +18,9 @@ body {
   min-height: 100vh;
   font-family: $base-font-family;
   font-weight: 400;
+  ::selection {
+    background: $base-color;
+  }
 }
 
 #fold {

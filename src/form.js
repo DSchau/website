@@ -2,14 +2,18 @@ import { FORM_URL } from './constants/urls';
 
 let SUBMITTED = false;
 
-export function validate(inputs = ['name', 'message'], invalidClassName = 'invalid') {
+export function validate(
+  inputs = ['name', 'message'],
+  invalidClassName = 'invalid'
+) {
   let focused = false;
-  const fields = [].concat(inputs)
+  const fields = []
+    .concat(inputs)
     .map(id => document.getElementById(id))
     .filter(el => {
       const valid = el.value && el.value.length > 0;
       if (!valid) {
-        if ( !focused ) {
+        if (!focused) {
           el.focus();
           focused = true;
         }
@@ -19,11 +23,13 @@ export function validate(inputs = ['name', 'message'], invalidClassName = 'inval
       }
       return valid;
     });
-  
+
   return fields.length === inputs.length;
 }
 
-export function getSuccessMessage(successMessage = 'Thanks! I\'ll be in touch.') {
+export function getSuccessMessage(
+  successMessage = "Thanks! I'll be in touch."
+) {
   const message = document.createElement('h3');
   message.className = 'message success';
   message.innerHTML = successMessage;
@@ -31,11 +37,10 @@ export function getSuccessMessage(successMessage = 'Thanks! I\'ll be in touch.')
 }
 
 export function sendEmail(url = FORM_URL, inputs = ['name', 'message']) {
-  const form = inputs
-    .reduce((formObj, inputId) => {
-      formObj[inputId] = document.getElementById(inputId).value;
-      return formObj;
-    }, {});
+  const form = inputs.reduce((formObj, inputId) => {
+    formObj[inputId] = document.getElementById(inputId).value;
+    return formObj;
+  }, {});
   return fetch(url, {
     method: 'POST',
     body: JSON.stringify(form)
@@ -44,21 +49,21 @@ export function sendEmail(url = FORM_URL, inputs = ['name', 'message']) {
 
 export default function handleForm(id = 'contact-form') {
   const formEl = document.getElementById(id);
-  const submitCallback = (ev) => {
+  const submitCallback = ev => {
     ev.preventDefault();
-    if ( !SUBMITTED ) {
+    if (!SUBMITTED) {
       const valid = validate();
 
-      if ( valid ) {
+      if (valid) {
         SUBMITTED = true;
         formEl.classList.add('pending');
         // sendEmail()
-        new Promise((resolve) => {
+        new Promise(resolve => {
           setTimeout(() => {
             resolve();
           }, 2500);
         })
-          .catch(() => ({}))  
+          .catch(() => ({}))
           .then(() => {
             formEl.classList.add('hide');
             formEl.classList.remove('pending');

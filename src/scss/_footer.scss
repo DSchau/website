@@ -7,6 +7,10 @@
     text-align: center;
     background-color: $contrast-color;
     padding: 0.25rem 0.5rem;
+    ::selection {
+      background: $blue-dark;
+      color: white;
+    }
   }
   .message {
     font-weight: normal;

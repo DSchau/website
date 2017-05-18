@@ -1,5 +1,5 @@
 export default function consoleLog(env = 'production') {
-  if ( process.env.NODE_ENV === env ) {
+  if (process.env.NODE_ENV === env) {
     const styles = [
       'background: linear-gradient(to top, #FF6138, #bf492a)',
       'color: white',
@@ -10,6 +10,9 @@ export default function consoleLog(env = 'production') {
       'padding: 4px 8px'
     ].join(';');
 
-    console.log('%c Oh shit waddup! Feel free to e-mail me at dustinschau@gmail.com', styles);
+    console.log(
+      '%c Oh shit waddup! Feel free to e-mail me at dustinschau@gmail.com',
+      styles
+    );
   }
 }
