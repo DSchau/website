@@ -16,7 +16,8 @@ module.exports = {
     vendor: [
       'autosize',
       'ityped',
-      'particles.js'
+      'particles.js',
+      'supports-webp'
     ]
   },
   output: {

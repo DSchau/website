@@ -54,8 +54,8 @@ module.exports = function config({ environment = 'production' } = {}) {
           use: ['pug-loader']
         },
         {
-          test: /\.jpe?g|png|gif$/,
-          use: 'url-loader?limit=10000'
+          test: /\.jpe?g|png|gif|webp$/,
+          use: 'url-loader?limit=5000'
         },
         {
           test: /\.woff2?$/,
@@ -72,6 +72,11 @@ module.exports = function config({ environment = 'production' } = {}) {
         {
           test: /\.svg$/,
           use: 'url-loader?limit=10000&mimetype=image/svg+xml'
+        },
+        {
+          test: /manifest\.json$/,
+          use: 'file-loader',
+          include: [path.join(__dirname, 'static')]
         }
       ]
     },
