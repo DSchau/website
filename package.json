@@ -11,6 +11,7 @@
     "deploy": "cross-env NODE_ENV=production node ./scripts/deploy",
     "copy": "cpy \"static/*.json\" \"dist\"",
     "prettier": "prettier --write --single-quote \"src/**/*.js\"",
+    "prettier:all": "prettier --write --single-quote \"webpack.config.*.js\" \"scripts/**/*.js\" \"__tests__/**/*/js\" \"__mocks__/**/*/js\"",
     "start": "webpack-dev-server --env.environment development --hot --quiet --content-base . --content-base static",
     "test": "jest --no-watchman",
     "test:watch": "npm run test -- --watch"

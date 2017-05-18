@@ -23,7 +23,7 @@ const outputFile = (file, extension, size = 900, quality = 75) => {
     return gm(file)
       .quality(quality)
       .resize(size, size)
-      .write(path.join(dest, fileName), (err) => {
+      .write(path.join(dest, fileName), err => {
         if (err) {
           reject(err);
         }
@@ -35,13 +35,12 @@ const outputFile = (file, extension, size = 900, quality = 75) => {
 getFiles()
   .then(files => {
     return Promise.all(
-      files
-        .map(file => {
-          return Promise.all([
-            outputFile(file, 'jpeg'),
-            outputFile(file, 'webp')
-          ]);
-        })
+      files.map(file => {
+        return Promise.all([
+          outputFile(file, 'jpeg'),
+          outputFile(file, 'webp')
+        ]);
+      })
     );
   })
   .then(() => {

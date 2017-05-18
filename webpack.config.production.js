@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const cssLoader = {
   loader: 'css-loader',
@@ -13,12 +13,7 @@ const cssLoader = {
 module.exports = {
   devtool: 'source-map',
   entry: {
-    vendor: [
-      'autosize',
-      'ityped',
-      'particles.js',
-      'supports-webp'
-    ]
+    vendor: ['autosize', 'ityped', 'particles.js', 'supports-webp']
   },
   output: {
     filename: '[name].[hash].js',
