@@ -1,6 +1,6 @@
 @mixin header() {
   header {
-    background: linear-gradient(45deg, $base-color, $base-darken-color);
+    background: radial-gradient(mix(yellow, $base-color, 20%), $base-darken-color);
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +42,7 @@
     font-weight: 700;
     transition: font-size 250ms ease-in-out, padding 150ms ease-in;
     background-color: white;
-    color: $base-darken-color;
+    color: mix($base-color, $base-darken-color, 25%);
     padding: 0.5rem 1rem;
     @media only screen and (min-width: $lg-breakpoint) {
       font-size: 6rem;

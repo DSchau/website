@@ -8,6 +8,10 @@ import handleForm from './form';
 import log from './log';
 
 export default function init() {
+  if (process.env.NODE_ENV === 'production') {
+    require('offline-plugin/runtime').install();
+  }
+
   const destroyable = {
     particles: particles('header'),
     scroll: smoothScroll(),

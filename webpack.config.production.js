@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 const cssLoader = {
   loader: 'css-loader',
@@ -38,6 +39,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new OfflinePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.CommonsChunkPlugin('vendor'),
     new ExtractTextPlugin({

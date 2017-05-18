@@ -1,5 +1,5 @@
 doctype html
-html.no-webp
+html
   head
     meta(charset="utf-8")
     meta(http-equiv="x-ua-compatible", content="ie=edge")
@@ -76,10 +76,10 @@ html.no-webp
         .content
           form(id="contact-form", novalidate)
             label(for="name") What's your name?
-              input(id="name", type="text", tabindex="1", aria-required="true")
+              input(id="name", type="text", aria-required="true")
             label(for="message") What's on your mind?
-              textarea(id="message", type="text", rows="3", tabindex="2", aria-required="true")
-            button(type="submit", tabindex="3") Send it
+              textarea(id="message", type="text", rows="3",  aria-required="true")
+            button(type="submit") Send it
       footer(role="contentinfo")
         h3.message Thanks for visiting! Keep in 
           a(href="#contact-form", data-scroll) touch!

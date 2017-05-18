@@ -5,7 +5,7 @@ export default () => {
   init(el, {
     strings: [
       'web apps',
-      'mobile apps',
+      'native apps',
       'backend services',
       'interactive experiences',
       'robust, performant apps',

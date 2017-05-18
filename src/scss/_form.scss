@@ -75,7 +75,7 @@ $form-invalid-color: mix(red, $base-color, 60%);
   }
   form {
     position: relative;
-    transition: opacity 250ms ease-in-out;
+    transition: opacity 250ms ease-in-out, visibility 250ms ease-out;
     @media only screen and (min-width: #{$lg-breakpoint}) {
       max-width: 50%;
       margin: 0 auto;
