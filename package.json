@@ -4,12 +4,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "precommit": "lint-staged",
     "prebuild": "del-cli \"dist/**/*\" && npm run copy",
     "build": "cross-env NODE_env=production webpack --env.environment production",
     "predeploy": "npm run build",
     "deploy": "cross-env NODE_ENV=production node ./scripts/deploy",
     "copy": "cpy \"static/*.json\" \"dist\"",
-    "prettier": "prettier --single-quote --write \"src/**/*.js\"",
+    "prettier": "prettier --write --single-quote \"src/**/*.js\"",
     "start": "webpack-dev-server --env.environment development --hot --quiet --content-base . --content-base static",
     "test": "jest --no-watchman",
     "test:watch": "npm run test -- --watch"
@@ -40,7 +41,9 @@
     "glob": "~7.1.1",
     "gm": "~1.23.0",
     "html-webpack-plugin": "~2.28.0",
+    "husky": "~0.13.3",
     "jest": "~20.0.3",
+    "lint-staged": "~3.4.2",
     "node-sass": "~4.5.2",
     "postcss": "~6.0.1",
     "postcss-loader": "~2.0.5",
@@ -56,5 +59,11 @@
     "webpack": "~2.5.1",
     "webpack-config-assign": "~1.0.0",
     "webpack-dev-server": "~2.4.5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote",
+      "git add"
+    ]
   }
 }
