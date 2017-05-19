@@ -1,5 +1,5 @@
 @mixin social() {
-  .social {
+  .social-circles {
     position: absolute;
     right: 0;
     top: 0;
@@ -31,6 +31,15 @@
     .icon {
       font-size: 28px;
       line-height: 40px;
+    }
+    .github:hover {
+      color: #181717;
+    }
+    .twitter:hover {
+      color: #1DA1F2;
+    }
+    .facebook:hover {
+      color: #3B5998;
     }
   }
 }

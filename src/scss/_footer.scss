@@ -1,37 +1,93 @@
+$message-font-size: 1.3rem;
+$transition-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
 @mixin footer() {
   footer {
     min-height: 25vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: $contrast-color;
     padding: 0.25rem 0.5rem;
+    position: relative;
     ::selection {
       background: $blue-dark;
       color: white;
     }
+    .social {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .icons {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      li {
+        display: inline-block;
+        margin-right: 1rem;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      .icon {
+        display: inline-block;
+        font-size: $message-font-size * 1.4;
+        opacity: 0.65;
+        transition: all 250ms $transition-function;
+        &:hover {
+          opacity: 1;
+          transform: scale(1.125);
+          color: mix(black, $blue-dark, 25%);
+        }
+      }
+      a {
+        color: inherit;
+      }
+    }
+  }
+  .icons, .message {
+    width: 100%;
+  }
+  .message, .copyright {
+    margin: 0;
+    padding: 0;
   }
   .message {
     font-weight: normal;
     color: $blue-dark;
     font-weight: bold;
+    font-size: $message-font-size;
+    display: inline-block;
+    margin: 1rem auto;
+    margin-top: 0;
+    white-space: nowrap;
     a {
       color: $blue-dark;
       text-decoration: none;
     }
-    .disclaimer {
-      color: $blue-light;
-      font-weight: normal;
-      font-size: 0.85rem;
-      padding-top: 0.5rem;
-      display: none;
-      &:last-child {
-        padding-top: 0.25rem;
-      }
-      @media only screen and (min-width: $lg-breakpoint) {
-        display: block;
-      }
+    .icon {
+      display: inline-block;
+      animation: pulse 2s $transition-function infinite;
+      padding: 0.25rem 0.5rem;
     }
+  }
+  .copyright {
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: $blue-light;
   }
 }

@@ -1,5 +1,5 @@
 $form-element-padding: 1rem;
-$form-element-font-size: 18px;
+$form-element-font-size: 1.4rem;
 $form-invalid-color: mix(red, $base-color, 60%);
 
 @mixin focus($color: $base-color) {
@@ -10,6 +10,9 @@ $form-invalid-color: mix(red, $base-color, 60%);
 }
 
 @mixin form() {
+  input, textarea, button {
+    font-size: $form-element-font-size;
+  }
   input, textarea {
     width: 100%;
     border: 1px solid transparent;
@@ -19,7 +22,6 @@ $form-invalid-color: mix(red, $base-color, 60%);
     padding: $form-element-padding;
     box-sizing: border-box;
     outline: none;
-    font-size: $form-element-font-size;
     transition: box-shadow 125ms ease-in-out, border 125ms ease-in-out;
     position: relative;
     &.invalid {
@@ -55,7 +57,7 @@ $form-invalid-color: mix(red, $base-color, 60%);
     text-transform: uppercase;
     cursor: pointer;
     &:focus, &:hover {
-      transform: scale3d(1.125, 1.125, 1);
+      width: 85%;
       background-color: transparent;
       border-color: $base-color;
       color: $base-color;

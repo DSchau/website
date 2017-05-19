@@ -5,15 +5,16 @@
     left: 0;
     z-index: 3;
     text-align: center;
-    opacity: 0.7;
+    opacity: 0.85;
     transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
     color: $base-color;
     cursor: pointer;
     width: 100%;
     box-sizing: border-box;
+    transform-origin: top;
     &:hover {
       opacity: 1;
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.1);
     }
     a {
       text-decoration: none;

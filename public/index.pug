@@ -3,11 +3,14 @@ html
   head
     meta(charset="utf-8")
     meta(http-equiv="x-ua-compatible", content="ie=edge")
-    title Dustin Schau - Developer of things
+    meta(name="description", content="The portfolio of the Omaha, Nebraska based front-end developer, Dustin Schau")
+    meta(name="keywords", content="Developer, javascript, programming, designer, user experience, design, omaha, nebraska")
+    meta(name="robots", content="index, follow")
+    title Dustin Schau - Front-end developer
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(name="theme-color", content="#FF6138")
-    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,700", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:100,400,700", rel="stylesheet")
     link(rel="manifest", href=require('static/manifest.json'))
   body
     // Oh hi, look at you all up in my business inspecting my source and what not. Well... welcome :) If you'd ever like to chat, reach out to me at dustinschau at gmail dot com, and let's talk!
@@ -24,55 +27,88 @@ html
     main#fold(role="main")
       header#header
         .hero
-          h1.name Dustin Schau
+          h1.name
+            span.first
+              span.letter D
+              span.letter u
+              span.letter s
+              span.letter t
+              span.letter i
+              span.letter n
+            span.last 
+              span.letter S
+              span.letter c
+              span.letter h
+              span.letter a
+              span.letter u
           h2.description I design and create 
             span#example
             |, typically using javascript
 
-      .social
+      .social-circles
         a.github(href="https://github.com/dschau", target="_blank", rel="noopener")
           i.icon.icon-github-circled(aria-hidden="true")
         a.twitter(href="https://twitter.com/schaudustin", target="_blank", rel="noopener")
           i.icon.icon-twitter(aria-hidden="true")
+        a.facebook(href="https://www.facebook.com/profile.php?id=100004599014794", target="_blank", rel="noopener")
+          i.icon.icon-facebook-squared(aria-hidden="true")
+
 
       #particles
 
       .learn-more-container
         a(href="#below-the-fold", role="navigation", data-scroll)
-          span.text Want to learn more?
+          span.text More info this way
           i.icon.icon-down-open(aria-hidden="true")
     #below-the-fold(role="complementary")
       section#expertise
         .heading
           h2.title My skills
+          h3.subtitle aka the areas in which I'd claim to be the "real MVP"
         .content
           ul.group
-            li.item
-              .image.image-ideas
-              .overlay
-                h3.item-title Design
-                .icon.icon-lightbulb
-            li.item
-              .image.image-coding
-              .overlay
-                h3.item-title Development
-                .icon.icon-code
-            li.item
-              .image.image-build-tooling
-              .overlay
-                h3.item-title Build tooling
-                .icon.icon-tools
+            li.group-item.development
+              .item
+                .image.image-coding(alt="Computer code")
+                .overlay
+                  h3.item-title Development
+                  i.icon.icon-code(aria-hidden="true")
+              p.description Development is all about solving problems, and turning an idea into reality. With my years of experience, I've solved a 
+                em ton 
+                | of problems, and brought countless ideas to fruition.
+            li.group-item
+              .item
+                .image.image-ideas(alt="Notepad sketching ideas")
+                .overlay
+                  h3.item-title Design
+                  i.icon.icon-beaker(aria-hidden="true")
+              p.description Design is not just how something looks, it's also how it 
+                em functions 
+                | and my years of UI/UX experience and eye for detail are key drivers for my passion in designing immersive, beautiful, and pixel perfect applications
+            li.group-item
+              .item
+                .image.image-build-tooling(alt="Hammer signifying build tools")
+                .overlay
+                  h3.item-title Build tooling
+                  i.icon.icon-tools(aria-hidden="true")
+              p.description Whether it's re-tooling the front-end build process for every application at a Fortune 200 company or fiddling with a pesky webpack, gulp, grunt, 
+                em et al  
+                | config, I've done a bit of everything, and bring years of build tooling knowledge and know-how to any project
       section#work
         .heading
           h2.title My work
+          h3.subtitle Significant projects worth sharing
         .content
-      section.more
+
+      section#more
         .heading
           h2.title More
         .content
+
       section#contact
         .heading
           h2.title Want to get in touch?
+          h3.subtitle You know&hellip; that whole socializing and human connection thing
         .content
           form(id="contact-form", novalidate)
             label(for="name") What's your name?
@@ -81,9 +117,23 @@ html
               textarea(id="message", type="text", rows="3",  aria-required="true")
             button(type="submit") Send it
       footer(role="contentinfo")
-        h3.message Thanks for visiting! Keep in 
-          a(href="#contact-form", data-scroll) touch!
-          span.disclaimer &hellip; seriously, I mean it. I love getting e-mails, questions, comments, concerns.
-          span.disclaimer But wait&hellip; why would you be concerned? OK, maybe not 
-            em concerns! 
-            | The rest though!
+        .social
+          h3.message Made with
+            i.icon.icon-heart(aria-hidden="true") 
+            | by yours truly
+          ul.icons
+            li
+              a(href="https://github.com/dschau", target="_blank", rel="noopener")
+                .icon.icon-github-circled(aria-hidden="true")
+            li
+              a(href="https://twitter.com/schaudustin", target="_blank", rel="noopener")
+                .icon.icon-twitter(aria-hidden="true")
+            li
+              a(href="https://www.facebook.com/profile.php?id=100004599014794", target="_blank", rel="noopener")
+                i.icon.icon-facebook-squared(aria-hidden="true")
+          h4.copyright &copy; 
+            span#year 2016
+              | .
+          a.arrow.up(href="#fold", aria-label="Back to top", data-scroll)
+            i.icon.icon-up-open(aria-hidden="true")
+

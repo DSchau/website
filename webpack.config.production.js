@@ -39,11 +39,17 @@ module.exports = {
     ]
   },
   plugins: [
-    new OfflinePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true
+    }),
     new webpack.optimize.CommonsChunkPlugin('vendor'),
     new ExtractTextPlugin({
       filename: 'style.[hash].css'
+    }),
+    new OfflinePlugin({
+      ServiceWorker: {
+        events: true
+      }
     })
   ]
 };

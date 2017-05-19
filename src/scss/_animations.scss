@@ -1,5 +1,49 @@
+$pulse-color: mix(blue, red, 25%);
+
 @keyframes blink {
-    100% {
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animateBg { 
+  0%{background-position:50% 0%}
+  50%{background-position:51% 100%}
+  100%{background-position:50% 0%}
+}
+
+/*
+ * https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
+ */
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0) rotate(5deg);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0) rotate(-5deg);
+  }
+
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    color: $pulse-color;
+  }
+  50% {
+    transform: scale(1.25);
+    color: mix(red, $pulse-color, 50%);
+  }
+  100% {
+    transform: scale(1);
+    color: $pulse-color;
+  }
 }

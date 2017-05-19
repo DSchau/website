@@ -9,7 +9,16 @@ import log from './log';
 
 export default function init() {
   if (process.env.NODE_ENV === 'production') {
-    require('offline-plugin/runtime').install();
+    const runtime = require('offline-plugin/runtime');
+
+    runtime.install({
+      onUpdateReady() {
+        runtime.applyUpdate();
+      },
+      onUpdated() {
+        window.location.reload();
+      }
+    });
   }
 
   const destroyable = {
@@ -21,8 +30,9 @@ export default function init() {
   };
 
   modernizr();
-
   log();
+
+  document.getElementById('year').innerHTML = new Date().getFullYear();
 
   return {
     destroy(str) {

@@ -1,14 +1,16 @@
 @mixin header() {
   header {
-    background: radial-gradient(mix(yellow, $base-color, 20%), $base-darken-color);
+    background: linear-gradient(mix(yellow, $base-color, 20%), $base-darken-color);
+    background-size: 400% 400%;
+    animation: animateBg 10s ease infinite;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 80vh;
     z-index: 3;
-    transform: skewY(-8deg);
-    transform-origin: 0;
+    // transform: skewY(-8deg);
+    // transform-origin: 0;
     display: flex;
     justify-content: center;
     align-items: left;
@@ -16,8 +18,8 @@
     padding: 1rem 2rem;
     canvas {
       height: 90vh;
-      transform: skewY(0);
-      transform-origin: 0;
+      // transform: skewY(0);
+      // transform-origin: 0;
       position: absolute;
       top: 0;
       right: 0;
@@ -28,12 +30,14 @@
 
   .hero {
     margin-top: 2rem;
+    // pointer-events: none;
   }
 
   .name, .description {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    z-index: 3;
   }
 
   .name {
@@ -41,9 +45,20 @@
     text-transform: uppercase;
     font-weight: 700;
     transition: font-size 250ms ease-in-out, padding 150ms ease-in;
-    background-color: white;
-    color: mix($base-color, $base-darken-color, 25%);
+    background-color: $blue-dark;
+    color: white;
     padding: 0.5rem 1rem;
+    .first {
+      white-space: nowrap;
+    }
+    .letter {
+      display: inline-block;
+      position: relative;
+      z-index: 3;
+      &:hover {
+        animation: shake 1000ms ease-in-out;
+      }
+    }
     @media only screen and (min-width: $lg-breakpoint) {
       font-size: 6rem;
       padding: 1rem 2rem;

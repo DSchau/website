@@ -1,5 +1,5 @@
 $base-color: #FF6138;
-$base-darken-color: mix(black, saturate($base-color, 100%), 25%);
+$base-darken-color: mix(mix(black, red, 45%), saturate($base-color, 100%), 25%);
 
 $blue-light: #013440;
 $blue-dark: #002635;

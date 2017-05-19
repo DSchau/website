@@ -30,7 +30,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 5,
+      "speed": 2,
       "direction": "none",
       "random": false,
       "straight": false,
@@ -59,7 +59,7 @@
         }
       },
       "push": {
-        "particles_nb": 4
+        "particles_nb": 3
       }
     }
   },

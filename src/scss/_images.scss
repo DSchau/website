@@ -1,0 +1,43 @@
+@mixin images() {
+  .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-color: $blue-light;
+    background-blend-mode: overlay;
+    filter: blur(3px);
+    transition: filter 250ms ease-in-out, transform 250ms ease-in-out, background-color 250ms ease-in-out;
+    &:hover {
+      background-color: transparent;
+      filter: none;
+      transform: scale(1.125);
+    }
+  }
+
+  .webp {
+    .image-ideas {
+      background-image: url('~static/images/ideas.webp');
+    }
+    .image-coding {
+      background-image: url('~static/images/coding.webp');
+    }
+    .image-build-tooling {
+      background-image: url('~static/images/build-tooling.webp');
+    }
+  }
+
+  .no-webp {
+    .image-ideas {
+      background-image: url('~static/images/ideas.jpeg');
+    }
+    .image-coding {
+      background-image: url('~static/images/coding.jpeg');
+    }
+    .image-build-tooling {
+      background-image: url('~static/images/build-tooling.jpeg');
+    }
+  }
+}
