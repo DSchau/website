@@ -1,5 +1,5 @@
 @mixin typing() {
-  #example {
+  .code-example {
     box-sizing: border-box;
     color: white;
     @media only screen and (min-width: 768px) {

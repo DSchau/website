@@ -1,7 +1,7 @@
 import { init, destroy } from 'ityped';
 
 export default () => {
-  const el = document.getElementById('example');
+  const el = document.querySelector('.code-example');
   init(el, {
     strings: [
       'web apps',

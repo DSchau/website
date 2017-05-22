@@ -18,7 +18,7 @@ const getFiles = () => {
 
 const outputFile = (file, extension, size = 900, quality = 60) => {
   const name = file.split(src).pop().split('.').shift();
-  const fileName = `${name}.${extension}`;
+  const fileName = `${name.replace(new RegExp('-' + size), '')}.${extension}`;
   const stream = sharp(file).resize(size);
 
   return stream[extension]({ quality }).toFile(path.join(dest, fileName));
@@ -28,9 +28,10 @@ getFiles()
   .then(files => {
     return Promise.all(
       files.map(file => {
+        const size = parseInt(file.match(/-(\d+)/).pop());
         return Promise.all([
-          outputFile(file, 'jpeg'),
-          outputFile(file, 'webp')
+          outputFile(file, 'jpeg', size),
+          outputFile(file, 'webp', size)
         ]);
       })
     );

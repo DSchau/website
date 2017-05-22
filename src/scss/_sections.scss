@@ -14,8 +14,8 @@
     $start-color: mix(white, $blue-light, 35%);
     $end-color: $blue-dark;
     @for $i from 1 through $loop-count {
+      $bg-color: mix($end-color, $start-color, percentage($difference * $i));
       &:nth-child(#{$i}) {
-        $bg-color: mix($end-color, $start-color, percentage($difference * $i));
         background: linear-gradient(to top, mix($end-color, $bg-color, 15%), $bg-color 5%);
         color: getColorFromBackgroundColor($bg-color);
       }
@@ -50,7 +50,7 @@
     text-align: center;
   }
   .title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     padding: 0.5rem 0;
     margin: 0.5rem auto;
     border-top: 2px solid $base-color;
@@ -73,11 +73,12 @@
       flex-direction: row;
     }
     .group-item {
-      margin: 1rem 0.5rem;
       width: 100%;
+      padding: 0.5rem 1rem;
+      box-sizing: border-box;
     }
     .item {
-      padding: 5rem 0.5rem;
+      padding: 5rem 1rem;
       text-align: center;
       position: relative;
       box-sizing: border-box;

@@ -1,5 +1,5 @@
 @mixin images() {
-  .image {
+  .item .image {
     position: absolute;
     top: 0;
     right: 0;
@@ -26,6 +26,12 @@
     }
     .image-build-tooling {
       background-image: url('~static/images/build-tooling.webp');
+    }
+    .image-sample {
+      background-image: url('~static/images/sample.webp');
+    }
+    .image-sample-two {
+      background-image: url('~static/images/sample-two.webp');
     }
   }
 

@@ -1,12 +1,11 @@
 @mixin social() {
   .social-circles {
     position: absolute;
-    right: 0;
-    top: 0;
+    top: 75vh;
     z-index: 4;
     padding: 0.5rem 1rem;
-    background: black;
-    background: linear-gradient(to bottom, $base-darken-color, rgba($base-darken-color, 0) 75%);
+    margin: 0 auto;
+    text-align: center;
     a {
       display: inline-block;
       margin-right: 1.5rem;

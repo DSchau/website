@@ -14,16 +14,9 @@ html
     link(rel="manifest", href=require('static/manifest.json'))
   body
     // Oh hi, look at you all up in my business inspecting my source and what not. Well... welcome :) If you'd ever like to chat, reach out to me at dustinschau at gmail dot com, and let's talk!
-    // tech used
+    // tech used: 
     //
-     - Particles.js
-     - ityped
-     - Sass
-     - pug
-     - Webpack
-     - AWS Lamda
-     - Serverless
-     - Years of experience screwing around on these damn internet machines
+     Particles.js • ityped • Sass • pug • Webpack • AWS Lamda • Serverless • Years of experience screwing around on these damn internet machines
     main#fold(role="main")
       header#header
         .hero
@@ -42,8 +35,9 @@ html
               span.letter a
               span.letter u
           h2.description I design and create 
-            span#example
+            span.code-example
             |, typically using javascript
+        #particles
 
       .social-circles
         a.github(href="https://github.com/dschau", target="_blank", rel="noopener")
@@ -52,9 +46,8 @@ html
           i.icon.icon-twitter(aria-hidden="true")
         a.facebook(href="https://www.facebook.com/profile.php?id=100004599014794", target="_blank", rel="noopener")
           i.icon.icon-facebook-squared(aria-hidden="true")
-
-
-      #particles
+        a.email(href="#contact", data-scroll)
+          i.icon.icon-email(aria-hidden="true")
 
       .learn-more-container
         a(href="#below-the-fold", role="navigation", data-scroll)
@@ -67,7 +60,7 @@ html
           h3.subtitle aka the areas in which I'd claim to be the "real MVP"
         .content
           ul.group
-            li.group-item.development
+            li.group-item
               .item
                 .image.image-coding(alt="Computer code")
                 .overlay
@@ -94,16 +87,26 @@ html
               p.description Whether it's re-tooling the front-end build process for every application at a Fortune 200 company or fiddling with a pesky webpack, gulp, grunt, 
                 em et al  
                 | config, I've done a bit of everything, and bring years of build tooling knowledge and know-how to any project
-      section#work
-        .heading
-          h2.title My work
-          h3.subtitle Significant projects worth sharing
-        .content
 
-      section#more
-        .heading
-          h2.title More
-        .content
+      //- section#work-info
+      //-   .heading
+      //-     h2.title My work
+      //-     h3.subtitle Significant projects worth sharing
+      //-   .content
+      //-     p.description Some projects that I'm especially proud of and exemplars of some of my passions 
+
+      #work
+        article.work
+          .image.image-sample
+          .overlay
+            h2.title Connected Driver
+            h3.subtitle PeopleNet, Inc.
+
+        article.work
+          .image.image-sample-two
+          .overlay
+            h2.title Angular Workshop
+            h3.subtitle Conversant
 
       section#contact
         .heading
@@ -136,4 +139,5 @@ html
               | .
           a.arrow.up(href="#fold", aria-label="Back to top", data-scroll)
             i.icon.icon-up-open(aria-hidden="true")
+        #particles-footer
 

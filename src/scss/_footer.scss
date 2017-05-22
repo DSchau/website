@@ -69,8 +69,6 @@ $transition-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
     font-weight: bold;
     font-size: $message-font-size;
     display: inline-block;
-    margin: 1rem auto;
-    margin-top: 0;
     white-space: nowrap;
     a {
       color: $blue-dark;
@@ -81,11 +79,15 @@ $transition-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
       animation: pulse 2s $transition-function infinite;
       padding: 0.25rem 0.5rem;
     }
+    @media only screen and (min-width: $lg-breakpoint) {
+      margin: 1rem auto;
+    }
   }
   .copyright {
     position: absolute;
     width: 100%;
-    bottom: 5px;
+    bottom: 0.5rem;
+    left: 0;
     text-align: center;
     font-size: 0.8rem;
     color: $blue-light;

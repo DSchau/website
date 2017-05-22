@@ -2,7 +2,13 @@ import ParticleJS from 'particles.js';
 import particlesConfig from 'static/config.json';
 
 export default selector => {
-  ParticleJS(selector, particlesConfig);
+  const instances = [].concat(selector).map(instance => {
+    return ParticleJS(instance, particlesConfig);
+  });
 
-  return ParticleJS.destroy;
+  return () => {
+    instances.splice(0).forEach(() => {
+      ParticleJS.destroy();
+    });
+  };
 };

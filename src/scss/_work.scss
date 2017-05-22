@@ -1,0 +1,35 @@
+@mixin work() {
+  #work-info {
+    min-height: 50vh;
+  }
+  .work {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    padding: 1rem 0;
+    color: white;
+    .image {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center top;
+      filter: brightness(50%);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transition: all 250ms ease-in-out;
+    }
+    .overlay {
+      position: relative;
+      pointer-events: none;
+    }
+    .title {
+      font-size: 2rem;
+    }
+  }
+}

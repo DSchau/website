@@ -11,9 +11,12 @@
 @import "scss/learn-more";
 @import "scss/sections";
 @import "scss/typing";
+@import "scss/work";
 
 html, body {
   min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -25,14 +28,6 @@ body {
   }
 }
 
-#fold {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: $blue-dark;
-}
-
 @include header();
 @include footer();
 @include images();
@@ -42,3 +37,4 @@ body {
 @include learnMore();
 @include sections(4);
 @include typing();
+@include work();

@@ -22,7 +22,7 @@ export default function init() {
   }
 
   const destroyable = {
-    particles: particles('header'),
+    particles: particles('particles'),
     scroll: smoothScroll(),
     type: typed(),
     form: handleForm(),
