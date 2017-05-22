@@ -1,6 +1,9 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
+const NameAllModulesPlugin = require('name-all-modules-plugin');
+
+const path = require('path');
 
 const cssLoader = {
   loader: 'css-loader',
@@ -17,7 +20,7 @@ module.exports = {
     vendor: ['autosize', 'ityped', 'particles.js', 'supports-webp']
   },
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].[chunkhash].js',
     publicPath: './'
   },
   module: {
@@ -39,10 +42,24 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.NamedChunksPlugin(chunk => {
+      if (chunk.name) {
+        return chunk.name;
+      }
+      return chunk.modules
+        .map(m => path.relative(m.context || __dirname, m.request))
+        .join('_');
+    }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true
     }),
-    new webpack.optimize.CommonsChunkPlugin('vendor'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    }),
     new ExtractTextPlugin({
       filename: 'style.[hash].css'
     }),
@@ -50,6 +67,7 @@ module.exports = {
       ServiceWorker: {
         events: true
       }
-    })
+    }),
+    new NameAllModulesPlugin()
   ]
 };
