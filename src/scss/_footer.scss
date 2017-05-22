@@ -50,6 +50,9 @@ $transition-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
           transform: scale(1.125);
           color: mix(black, $blue-dark, 25%);
         }
+        &:active {
+          transform: scale(1);
+        }
       }
       a {
         color: inherit;
