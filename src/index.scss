@@ -10,6 +10,7 @@
 @import "scss/arrows";
 @import "scss/learn-more";
 @import "scss/sections";
+@import "scss/tags";
 @import "scss/typing";
 @import "scss/work";
 
@@ -35,6 +36,7 @@ body {
 @include social();
 @include arrows();
 @include learnMore();
-@include sections(4);
+@include sections(3);
+@include tags();
 @include typing();
 @include work();

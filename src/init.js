@@ -1,3 +1,4 @@
+import lazyLoad from './lazy-load';
 import particles from './particles';
 import smoothScroll from './smooth-scroll';
 import typed from './typed';
@@ -20,6 +21,8 @@ export default function init() {
       }
     });
   }
+
+  lazyLoad();
 
   const destroyable = {
     particles: particles('particles'),

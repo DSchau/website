@@ -19,9 +19,10 @@
   "dependencies": {
     "autosize": "~3.0.20",
     "es6-promise": "~4.1.0",
+    "intersection-observer": "~0.2.1",
     "ityped": "~0.0.10",
     "normalize.css": "~7.0.0",
-    "particles.js": "dschau/particles.js#6ad91e1",
+    "particles.js": "dschau/particles.js#f421a5bd31efd572842645884c803c0c09d364fe",
     "smoothscroll-polyfill": "~0.3.5",
     "supports-webp": "~1.0.5",
     "whatwg-fetch": "~2.0.3"

@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="en")
   head
     meta(charset="utf-8")
     meta(http-equiv="x-ua-compatible", content="ie=edge")
@@ -34,9 +34,11 @@ html
               span.letter h
               span.letter a
               span.letter u
-          h2.description I design and create 
+          h2.description I design 
+            span.ampersand &amp; 
+            | create 
             span.code-example
-            |, typically using javascript
+            |, typically using JavaScript
         #particles
 
       .social-circles
@@ -97,16 +99,54 @@ html
 
       #work
         article.work
-          .image.image-sample
-          .overlay
+          .image.image-connected-driver.large
+          .heading
             h2.title Connected Driver
             h3.subtitle PeopleNet, Inc.
 
+          .content
+            p.description Connected Driver is a hybrid application available in both the Google Play Store and Apple App Store. It is used by more than ten thousand users each month!
+            ul.tags
+              li.tag TypeScript
+              li.tag Cordova
+              li.tag JavaScript
+              li.tag Sass
+              li.tag Webpack
+
         article.work
-          .image.image-sample-two
-          .overlay
-            h2.title Angular Workshop
-            h3.subtitle Conversant
+          .image.image-speaking.large
+          .heading
+            h2.title Speaking 
+              span.ampersand &amp; 
+              | workshops
+            h3.subtitle Full day workshops, presentations on JavaScript, front-end tooling, frameworks, etc.
+          .content
+            p.description Throughout my career, I've been lucky enough to get the opportunity to speak on a variety of topics and lead or assist with several workshops, including such topics as build tooling, framework comparisons, Angular, React, etc.&hellip; effectively "all things Javascript!"
+            ul.tags
+              li.tag Speaking
+              li.tag Presentations
+              li.tag Workshops
+              li.tag Build tooling
+              li.tag JavaScript
+
+        article.work
+          .image.image-build-tooling-alternate.large
+          .heading
+            h2.title Build tooling 
+              span.ampersand &amp; 
+              | optimizations
+            h3.subtitle Webpack, gulp, grunt, custom Node scripts&hellip; been there, done that!
+          .content
+            p.description Whether it's revamping a monolithic Webpack config (check out my npm package, 
+              a(href="https://www.npmjs.com/package/webpack-config-assign")
+                code webpack-config-assign
+              | ) to creating an application generator used by every application at a Fortune 500 company, I have experience in all phases of build tooling and automation, including performance optimizations to squeeze every ounce of performance out of an application
+            ul.tags
+              li.tag Build tooling
+              li.tag Optimizations
+              li.tag Automation
+              li.tag Webpack
+              li.tag JavaScript
 
       section#contact
         .heading

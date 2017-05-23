@@ -27,11 +27,14 @@
     .image-build-tooling {
       background-image: url('~static/images/build-tooling.webp');
     }
-    .image-sample {
-      background-image: url('~static/images/sample.webp');
+    .image-build-tooling-alternate.loaded {
+      background-image: url('~static/images/build-tooling-alternate.webp');
     }
-    .image-sample-two {
-      background-image: url('~static/images/sample-two.webp');
+    .image-connected-driver.loaded {
+      background-image: url('~static/images/connected-driver.webp');
+    }
+    .image-speaking.loaded {
+      background-image: url('~static/images/speaking.webp');
     }
   }
 
@@ -44,6 +47,15 @@
     }
     .image-build-tooling {
       background-image: url('~static/images/build-tooling.jpeg');
+    }
+    .image-build-tooling-alternate.loaded {
+      background-image: url('~static/images/build-tooling-alternate.jpeg');
+    }
+    .image-connected-driver.loaded {
+      background-image: url('~static/images/connected-driver.jpeg');
+    }
+    .image-speaking.loaded {
+      background-image: url('~static/images/speaking.jpeg');
     }
   }
 }
