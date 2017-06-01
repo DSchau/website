@@ -1,5 +1,5 @@
 
-.icon-email:before { content: '\e801'; } /* '' */
+.icon-email:before { content: '\e800'; } /* '' */
 .icon-up-open:before { content: '\e802'; } /* '' */
 .icon-beaker:before { content: '\e806'; } /* '' */
 .icon-down-open:before { content: '\e809'; } /* '' */
@@ -7,5 +7,6 @@
 .icon-tools:before { content: '\e80b'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-github-circled:before { content: '\f09b'; } /* '' */
+.icon-linkedin:before { content: '\f0e1'; } /* '' */
 .icon-code:before { content: '\f121'; } /* '' */
 .icon-facebook-squared:before { content: '\f308'; } /* '' */

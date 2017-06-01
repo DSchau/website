@@ -1,4 +1,4 @@
-import log from '../src/log';
+import log from '../src/util/log';
 
 describe('logging', () => {
   let impl;

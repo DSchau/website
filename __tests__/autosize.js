@@ -1,5 +1,5 @@
 jest.mock('autosize');
-import autosize from '../src/autosize';
+import autosize from '../src/util/autosize';
 
 import autosizeMock, { spies } from 'autosize';
 
@@ -7,7 +7,7 @@ describe('autosize', () => {
   let getElementByIdImpl;
   beforeEach(() => {
     getElementByIdImpl = global.document.getElementById;
-    global.document.getElementById = (id) => id;
+    global.document.getElementById = id => id;
   });
 
   afterEach(() => {
@@ -32,5 +32,4 @@ describe('autosize', () => {
 
     expect(spies.destroy).toBeCalledWith('sup');
   });
-
 });

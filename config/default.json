@@ -4,6 +4,5 @@
     "user": "",
     "password": ""
   },
-  "local": "dist",
-  "remote": "new"
+  "local": "dist"
 }

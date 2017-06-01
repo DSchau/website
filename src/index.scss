@@ -1,18 +1,18 @@
-@import "scss/variables";
-@import "scss/animations";
-@import "scss/functions";
-@import "scss/typography";
-@import "scss/header";
-@import "scss/images";
-@import "scss/footer";
-@import "scss/form";
-@import "scss/social";
-@import "scss/arrows";
-@import "scss/learn-more";
-@import "scss/sections";
-@import "scss/tags";
-@import "scss/typing";
-@import "scss/work";
+@import "style/variables";
+@import "style/animations";
+@import "style/functions";
+@import "style/typography";
+@import "style/header";
+@import "style/images";
+@import "style/footer";
+@import "style/form";
+@import "style/social";
+@import "style/arrows";
+@import "style/scroll";
+@import "style/sections";
+@import "style/tags";
+@import "style/typing";
+@import "style/work";
 
 html, body {
   min-height: 100%;
@@ -35,8 +35,8 @@ body {
 @include form();
 @include social();
 @include arrows();
-@include learnMore();
-@include sections(3);
+@include scroll();
+@include sections(4);
 @include tags();
 @include typing();
 @include work();

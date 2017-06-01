@@ -1,6 +1,6 @@
 jest.mock('particles.js');
 
-import particles from '../src/particles';
+import particles from '../src/util/particles';
 import particlesJS from 'particles.js';
 
 describe('particles', () => {
@@ -12,7 +12,10 @@ describe('particles', () => {
     const selector = 'selector';
     particles(selector);
 
-    expect(particlesJS.spies.constructor).toBeCalledWith(selector, expect.any(Object));
+    expect(particlesJS.spies.constructor).toBeCalledWith(
+      selector,
+      expect.any(Object)
+    );
   });
 
   it('calls destroy on returned function invocation', () => {

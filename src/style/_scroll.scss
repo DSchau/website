@@ -1,0 +1,44 @@
+@mixin scroll() {
+  .scroll-container {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    z-index: 3;
+    text-align: center;
+    opacity: 0.85;
+    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+    color: $base-color;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transform-origin: top;
+    &:hover {
+      opacity: 1;
+      transform: translateY(-5px) scale(1.1);
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      color: $base-color;
+    }
+    .text {
+      display: none;
+    }
+    .icon {
+      display: block;
+      font-size: 32px;
+      text-align: center;
+      margin-top: 0.35rem;
+    }
+    @media only screen and (min-width: $lg-breakpoint) {
+      padding: 0.75rem 1rem;
+      bottom: 0;
+      .text {
+        display: block;
+      }
+      .icon {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@import "util";
+
+@mixin header($tilt: false) {
+  header {
+    @if $tilt {
+      transform: skewY(-8deg);
+      transform-origin: 0;
+    }
+    background: linear-gradient(mix(yellow, $base-color, 35%), $base-darken-color);
+    background-size: 400% 400%;
+    animation: animateBg 10s ease infinite;
+    @include absolute();
+    height: 70vh;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    padding: 0.5rem;
+    @media only screen and (min-width: $lg-breakpoint) {
+      padding: 1rem 2rem;
+      height: 80vh;
+      canvas {
+        height: 80vh;
+      }
+    }
+    canvas {
+      @if $tilt {
+        transform: skewY(0);
+        transform-origin: 0;
+      }
+      height: 70vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      user-select: none;
+    }
+  }
+
+  #fold {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background: $blue-dark;
+  }
+
+  .hero {
+    margin-top: 2rem;
+  }
+
+  .name, .description {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .name {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: font-size 250ms ease-in-out, padding 150ms ease-in;
+    background-color: $blue-dark;
+    color: white;
+    padding: 0.5rem 1rem;
+    .letter {
+      display: inline-block;
+      position: relative;
+      z-index: 3;
+      &:hover {
+        animation: shake 1000ms ease-in-out;
+      }
+    }
+    @media only screen and (min-width: $lg-breakpoint) {
+      font-size: 6rem;
+      padding: 1rem 2rem;
+    }
+  }
+
+  .first, .last {
+    white-space: nowrap;
+  }
+
+  .first {
+    padding-right: 2vw;
+  }
+
+  .last {
+    font-weight: normal;
+  }
+
+  .role {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: $blue-dark;
+    line-height: 2.4rem;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,49 @@
+@mixin social($icon-size: 32px) {
+  .social-circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    padding: 0.5rem 0;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    a {
+      display: inline-block;
+      margin-right: 1.5rem;
+      transition: transform 250ms ease-in-out, background-color 250ms ease-in, color 250ms ease-in;
+      text-align: center;
+      position: relative;
+      color: $blue-light;
+      background-color: mix(white, $base-color, 45%);
+      height: $icon-size;
+      width: $icon-size;
+      border-radius: $icon-size;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        transform: scale(1.175);
+        transform-origin: center;
+        background-color: white;
+        color: $base-color;
+      }
+    }
+    .icon {
+      font-size: round($icon-size * 0.65);
+      line-height: $icon-size;
+    }
+    .github:hover {
+      color: #181717;
+    }
+    .twitter:hover {
+      color: #1DA1F2;
+    }
+    .linkedin:hover {
+      color: #0077B5;
+    }
+    .facebook:hover {
+      color: #3B5998;
+    }
+  }
+}

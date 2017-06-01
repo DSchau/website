@@ -1,0 +1,56 @@
+@import "util";
+
+@mixin progressiveImage($image) {
+  .image-#{$image} {
+    background-image: url('~static/images/#{$image}-launch.jpeg');
+  }
+
+  @if str-index($image, '-full') {
+    .webp .image-#{$image}.loaded {
+      background-image: url('~static/images/#{$image}.webp');
+    }
+    .no-webp .image-#{$image}.loaded {
+      background-image: url('~static/images/#{$image}.jpeg');
+    }
+  } @else {
+    .webp .image-#{$image} {
+      background-image: url('~static/images/#{$image}.webp');
+    }
+    .no-webp .image-#{$image} {
+      background-image: url('~static/images/#{$image}.jpeg');
+    }
+  }
+}
+
+@mixin images($images: (
+  'ideas',
+  'coding',
+  'build-tooling',
+  'build-tooling-full',
+  'connected-driver-full',
+  'speaking-full'
+)) {
+  .item .image {
+    @include absolute();
+    background-size: cover;
+    background-color: $blue-dark;
+    background-blend-mode: overlay;
+    filter: blur(3px);
+    transition: filter 250ms ease-in-out, transform 250ms ease-in-out;
+    &:hover {
+      background-color: transparent;
+      filter: none;
+      transform: scale(1.125);
+      z-index: 2;
+    }
+  }
+
+  .image.lazy {
+    background-color: black;
+    background-blend-mode: screen;
+  }
+
+  @each $image in $images {
+    @include progressiveImage($image);
+  }
+}

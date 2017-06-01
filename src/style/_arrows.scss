@@ -1,0 +1,14 @@
+@mixin arrows() {
+  .arrow {
+    color: $blue-dark;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: mix(white, mix(green, $contrast-color, 20%), 50%);
+    position: absolute;
+    right: 0.5rem;
+    z-index: 4;
+    &.up {
+      bottom: 0.5rem;
+    }
+  }
+}

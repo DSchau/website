@@ -1,0 +1,91 @@
+@import "util";
+
+$message-font-size: 1.3rem;
+$transition-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+@mixin footer() {
+  footer {
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: $contrast-color;
+    padding: 0.25rem 0.5rem;
+    position: relative;
+    ::selection {
+      background: $blue-dark;
+      color: white;
+    }
+    .social {
+      @include absolute();
+      @include flex-center(true);
+      width: 100%;
+    }
+    .icons {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      li {
+        display: inline-block;
+        margin-right: 1rem;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      .icon {
+        display: inline-block;
+        font-size: round($message-font-size * 1.4);
+        color: mix($contrast-color, $blue-dark, 25%);
+        transition: all 250ms $transition-function;
+        &:hover {
+          transform: scale(1.125);
+          color: mix(black, $blue-dark, 25%);
+        }
+        &:active {
+          transform: scale(1);
+        }
+      }
+      a {
+        color: inherit;
+      }
+    }
+  }
+  .icons, .message {
+    width: 100%;
+  }
+  .message, .copyright {
+    margin: 0;
+    padding: 0;
+  }
+  .message {
+    font-weight: normal;
+    color: $blue-dark;
+    font-weight: bold;
+    font-size: $message-font-size;
+    display: inline-block;
+    white-space: nowrap;
+    margin-bottom: 0.65rem;
+    a {
+      color: $blue-dark;
+      text-decoration: none;
+    }
+    .icon {
+      display: inline-block;
+      animation: pulse 2s $transition-function infinite;
+      padding: 0.25rem 0.5rem;
+    }
+    @media only screen and (min-width: $lg-breakpoint) {
+      margin: 1rem auto;
+    }
+  }
+  .copyright {
+    position: absolute;
+    width: 100%;
+    bottom: 0.5rem;
+    left: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: $blue-light;
+  }
+}

@@ -17,6 +17,7 @@ html(lang="en")
     // tech used: 
     //
      Particles.js • ityped • Sass • pug • Webpack • AWS Lamda • Serverless • Years of experience screwing around on these damn internet machines
+    //- TODO: remove the hover/press effect on mobile web
     main#fold(role="main")
       header#header
         .hero
@@ -34,7 +35,7 @@ html(lang="en")
               span.letter h
               span.letter a
               span.letter u
-          h2.description I design 
+          h2.role I design 
             span.ampersand &amp; 
             | create 
             span.code-example
@@ -42,16 +43,18 @@ html(lang="en")
         #particles
 
       .social-circles
-        a.github(href="https://github.com/dschau", target="_blank", rel="noopener")
+        a.github(href="https://github.com/dschau", name="github", target="_blank", rel="noopener")
           i.icon.icon-github-circled(aria-hidden="true")
-        a.twitter(href="https://twitter.com/schaudustin", target="_blank", rel="noopener")
+        a.twitter(href="https://twitter.com/schaudustin", name="twitter", target="_blank", rel="noopener")
           i.icon.icon-twitter(aria-hidden="true")
-        a.facebook(href="https://www.facebook.com/profile.php?id=100004599014794", target="_blank", rel="noopener")
+        a.linkedin(href="https://www.linkedin.com/in/dustin-schau-928907132", name="linkedin", target="_blank", rel="noopener")
+          i.icon.icon-linkedin(aria-hidden="true")
+        a.facebook(href="https://www.facebook.com/profile.php?id=100004599014794", name="facebook", target="_blank", rel="noopener")
           i.icon.icon-facebook-squared(aria-hidden="true")
-        a.email(href="#contact", data-scroll)
+        a.email(href="mailto:dustinschau+dustinschau.com@gmail.com", name="email", rel="noopener")
           i.icon.icon-email(aria-hidden="true")
 
-      .learn-more-container
+      .scroll-container
         a(href="#below-the-fold", role="navigation", data-scroll)
           span.text More info this way
           i.icon.icon-down-open(aria-hidden="true")
@@ -70,7 +73,7 @@ html(lang="en")
                   i.icon.icon-code(aria-hidden="true")
               p.description Development is all about solving problems, and turning an idea into reality. With my years of experience, I've solved a 
                 em ton 
-                | of problems, and brought countless ideas to fruition.
+                | of problems, and brought countless ideas to fruition
             li.group-item
               .item
                 .image.image-ideas(alt="Notepad sketching ideas")
@@ -90,16 +93,19 @@ html(lang="en")
                 em et al  
                 | config, I've done a bit of everything, and bring years of build tooling knowledge and know-how to any project
 
-      //- section#work-info
-      //-   .heading
-      //-     h2.title My work
-      //-     h3.subtitle Significant projects worth sharing
-      //-   .content
-      //-     p.description Some projects that I'm especially proud of and exemplars of some of my passions 
+      section#work
+        .heading
+          h2.title My work
+          h3.subtitle Significant projects worth sharing
+        .content
+          .scroll-container.work-scroll
+            a(href="#work-examples", role="navigation", data-scroll)
+              span.text Keep on scrolling
+              i.icon.icon-down-open(aria-hidden="true")
 
-      #work
-        article.work
-          .image.image-connected-driver.large
+      section#work-examples.examples
+        article#highlight.work
+          .image.image-connected-driver-full.lazy
           .heading
             h2.title Connected Driver
             h3.subtitle PeopleNet, Inc.
@@ -113,15 +119,15 @@ html(lang="en")
               li.tag Sass
               li.tag Webpack
 
-        article.work
-          .image.image-speaking.large
+        article#secondary.work
+          .image.image-speaking-full.lazy
           .heading
             h2.title Speaking 
               span.ampersand &amp; 
               | workshops
             h3.subtitle Full day workshops, presentations on JavaScript, front-end tooling, frameworks, etc.
           .content
-            p.description Throughout my career, I've been lucky enough to get the opportunity to speak on a variety of topics and lead or assist with several workshops, including such topics as build tooling, framework comparisons, Angular, React, etc.&hellip; effectively "all things Javascript!"
+            p.description Throughout my career, I've been privileged enough to get the opportunity to speak on a variety of topics and lead or assist with several workshops, including such topics as build tooling, framework comparisons, Angular, React, etc.&hellip; effectively "all things Javascript!"
             ul.tags
               li.tag Speaking
               li.tag Presentations
@@ -129,15 +135,15 @@ html(lang="en")
               li.tag Build tooling
               li.tag JavaScript
 
-        article.work
-          .image.image-build-tooling-alternate.large
+        article#supporting.work
+          .image.image-build-tooling-full.lazy
           .heading
             h2.title Build tooling 
               span.ampersand &amp; 
               | optimizations
             h3.subtitle Webpack, gulp, grunt, custom Node scripts&hellip; been there, done that!
           .content
-            p.description Whether it's revamping a monolithic Webpack config (check out my npm package, 
+            p.description From revamping a monolithic Webpack config (check out my npm package, 
               a(href="https://www.npmjs.com/package/webpack-config-assign")
                 code webpack-config-assign
               | ) to creating an application generator used by every application at a Fortune 500 company, I have experience in all phases of build tooling and automation, including performance optimizations to squeeze every ounce of performance out of an application
@@ -151,14 +157,21 @@ html(lang="en")
       section#contact
         .heading
           h2.title Want to get in touch?
-          h3.subtitle You know&hellip; that whole socializing and human connection thing
+          h3.subtitle That whole socializing thing that humans sometimes do
         .content
-          form(id="contact-form", novalidate)
-            label(for="name") What's your name?
-              input(id="name", type="text", aria-required="true")
-            label(for="message") What's on your mind?
-              textarea(id="message", type="text", rows="3",  aria-required="true")
-            button(type="submit") Send it
+          #contact-form-container
+            .alert.success.hide
+              i.icon.icon-heart(aria-hidden="true")
+              //- icon-check
+              h3.message Got it! I'll be in touch.
+            form(id="contact-form", novalidate)
+              label(for="name") What's your name?
+                input(id="name", type="text", aria-required="true")
+              label(for="email") What's your email?
+                input(id="email", type="email", aria-required="true")
+              label(for="message") What's up?
+                textarea(id="message", type="text", rows="3",  aria-required="true")
+              button#submit(type="submit") Send it!
       footer(role="contentinfo")
         .social
           h3.message Made with
@@ -167,17 +180,21 @@ html(lang="en")
           ul.icons
             li
               a(href="https://github.com/dschau", target="_blank", rel="noopener")
-                .icon.icon-github-circled(aria-hidden="true")
+                i.icon.icon-github-circled(aria-hidden="true")
             li
               a(href="https://twitter.com/schaudustin", target="_blank", rel="noopener")
-                .icon.icon-twitter(aria-hidden="true")
+                i.icon.icon-twitter(aria-hidden="true")
+
+            li
+              a(href="https://www.linkedin.com/in/dustin-schau-928907132", target="_blank", rel="noopener")
+                i.icon.icon-linkedin(aria-hidden="true")
+
             li
               a(href="https://www.facebook.com/profile.php?id=100004599014794", target="_blank", rel="noopener")
                 i.icon.icon-facebook-squared(aria-hidden="true")
+
           h4.copyright &copy; 
             span#year 2016
               | .
           a.arrow.up(href="#fold", aria-label="Back to top", data-scroll)
             i.icon.icon-up-open(aria-hidden="true")
-        #particles-footer
-

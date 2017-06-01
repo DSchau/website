@@ -1,0 +1,20 @@
+@mixin absolute($full: false) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @if $full {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@mixin flex-center($column: false) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if $column {
+    flex-direction: column;
+  }
+}

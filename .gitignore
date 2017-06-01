@@ -67,4 +67,6 @@ typings/
 dist/
 
 # secret files
-config/production.json
+config/**/*.json
+!config/default.json
+TODO.md

@@ -58,7 +58,8 @@ module.exports = {
       minChunks: Infinity
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'runtime'
+      name: 'runtime',
+      minChunks: Infinity
     }),
     new ExtractTextPlugin({
       filename: 'style.[hash].css'

@@ -1,0 +1,33 @@
+@mixin tags() {
+  .tags {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    flex-direction: row;
+    align-items: center;
+    display: none;
+    width: 85%;
+    @media only screen and (min-width: #{$lg-breakpoint}) {
+      display: flex;
+    }
+  }
+  .tag {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, rgba(black, 0.5), rgba(black, 0.2));
+    border: 1px solid rgba(white, 0.25);
+    font-weight: normal;
+    font-size: 0.8rem;
+    width: 100%;
+    display: block;
+    text-align: center;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

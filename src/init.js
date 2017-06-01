@@ -1,12 +1,12 @@
-import lazyLoad from './lazy-load';
-import particles from './particles';
-import smoothScroll from './smooth-scroll';
-import typed from './typed';
-import autosize from './autosize';
-import modernizr from './modernizr';
+import lazyLoad from './util/lazy-load';
+import particles from './util/particles';
+import smoothScroll from './util/smooth-scroll';
+import typed from './util/typed';
+import autosize from './util/autosize';
+import modernizr from './util/modernizr';
 
-import handleForm from './form';
-import log from './log';
+import handleForm from './util/form';
+import log from './util/log';
 
 export default function init() {
   if (process.env.NODE_ENV === 'production') {
@@ -22,14 +22,13 @@ export default function init() {
     });
   }
 
-  lazyLoad();
-
   const destroyable = {
     particles: particles('particles'),
     scroll: smoothScroll(),
     type: typed(),
     form: handleForm(),
-    autosize: autosize(['message'])
+    autosize: autosize(['message']),
+    lazy: lazyLoad()
   };
 
   modernizr();

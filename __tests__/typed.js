@@ -1,6 +1,6 @@
 jest.mock('ityped');
 
-import typed from '../src/typed';
+import typed from '../src/util/typed';
 import * as itypedMock from 'ityped';
 
 describe('typed', () => {
