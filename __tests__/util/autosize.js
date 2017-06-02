@@ -1,5 +1,5 @@
 jest.mock('autosize');
-import autosize from '../src/util/autosize';
+import autosize from '../../src/util/autosize';
 
 import autosizeMock, { spies } from 'autosize';
 

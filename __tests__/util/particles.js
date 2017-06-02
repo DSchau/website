@@ -1,6 +1,6 @@
 jest.mock('particles.js');
 
-import particles from '../src/util/particles';
+import particles from '../../src/util/particles';
 import particlesJS from 'particles.js';
 
 describe('particles', () => {
