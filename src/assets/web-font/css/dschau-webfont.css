@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'dschau-webfont';
-  src: url('../font/dschau-webfont.eot?22736323');
-  src: url('../font/dschau-webfont.eot?22736323#iefix') format('embedded-opentype'),
-       url('../font/dschau-webfont.woff2?22736323') format('woff2'),
-       url('../font/dschau-webfont.woff?22736323') format('woff'),
-       url('../font/dschau-webfont.ttf?22736323') format('truetype'),
-       url('../font/dschau-webfont.svg?22736323#dschau-webfont') format('svg');
+  src: url('../font/dschau-webfont.eot?64288142');
+  src: url('../font/dschau-webfont.eot?64288142#iefix') format('embedded-opentype'),
+       url('../font/dschau-webfont.woff2?64288142') format('woff2'),
+       url('../font/dschau-webfont.woff?64288142') format('woff'),
+       url('../font/dschau-webfont.ttf?64288142') format('truetype'),
+       url('../font/dschau-webfont.svg?64288142#dschau-webfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'dschau-webfont';
-    src: url('../font/dschau-webfont.svg?22736323#dschau-webfont') format('svg');
+    src: url('../font/dschau-webfont.svg?64288142#dschau-webfont') format('svg');
   }
 }
 */
@@ -55,7 +55,8 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-email:before { content: '\e800'; } /* '' */
+.icon-mail:before { content: '\e800'; } /* '' */
+.icon-ok-circled:before { content: '\e801'; } /* '' */
 .icon-up-open:before { content: '\e802'; } /* '' */
 .icon-beaker:before { content: '\e806'; } /* '' */
 .icon-down-open:before { content: '\e809'; } /* '' */

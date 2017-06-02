@@ -2,6 +2,11 @@ import { FORM_URL } from '../constants/urls';
 
 const EXCLUDED_FORM_ELEMENTS = ['BUTTON'];
 
+const VALIDATORS = {
+  text: /^.+$/,
+  email: /.+@.+\..+/
+};
+
 let SUBMITTED = false;
 
 export function getFormElements(
@@ -17,6 +22,14 @@ export function getFormElements(
     }, {});
 }
 
+export function elementIsValid(element, validators = VALIDATORS) {
+  const type = element.getAttribute('type') || 'text';
+  if (element.value) {
+    return (VALIDATORS[type] || VALIDATORS.text).test(element.value);
+  }
+  return false;
+}
+
 export function validate(invalidClassName = 'invalid') {
   let focused = false;
   const inputs = getFormElements();
@@ -24,8 +37,7 @@ export function validate(invalidClassName = 'invalid') {
   return (
     ids.reduce((validCount, id) => {
       const el = inputs[id];
-      const valid = el.value && el.value.length > 0;
-      if (!valid) {
+      if (!elementIsValid(el)) {
         el.classList.add(invalidClassName);
         if (!focused) {
           el.focus();

@@ -53,3 +53,15 @@ $pulse-color: mix(blue, red, 25%);
     color: $pulse-color;
   }
 }
+
+@keyframes pulseStatic {
+    0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

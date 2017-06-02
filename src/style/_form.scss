@@ -86,9 +86,13 @@ $form-alert-font-size: 1.65rem;
       box-sizing: border-box;
       .message {
         font-size: $form-alert-font-size;
-        color: $form-success-color;
+        color: white;
         margin: 0;
         white-space: normal;
+      }
+      .icon {
+        color: $form-success-color;
+        animation: pulseStatic 5s ease-in-out infinite;
       }
   }
   }
