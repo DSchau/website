@@ -4,6 +4,7 @@ import smoothScroll from './util/smooth-scroll';
 import typed from './util/typed';
 import autosize from './util/autosize';
 import modernizr from './util/modernizr';
+import webFonts from './util/web-fonts';
 
 import handleForm from './util/form';
 import log from './util/log';
@@ -25,7 +26,7 @@ export default function init() {
   const destroyable = {
     particles: particles('particles'),
     scroll: smoothScroll(),
-    type: typed(),
+    typed: typed(),
     form: handleForm(),
     autosize: autosize(['message']),
     lazy: lazyLoad()
@@ -33,6 +34,7 @@ export default function init() {
 
   modernizr();
   log();
+  webFonts();
 
   document.getElementById('year').innerHTML = new Date().getFullYear();
 

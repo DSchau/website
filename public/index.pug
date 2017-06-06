@@ -10,14 +10,13 @@ html(lang="en")
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(name="theme-color", content="#FF6138")
-    link(href="https://fonts.googleapis.com/css?family=Montserrat:100,400,700", rel="stylesheet")
+    link(href="https://fonts.gstatic.com", rel="preconnect", crossorigin)
     link(rel="manifest", href=require('static/manifest.json'))
   body
     // Oh hi, look at you all up in my business inspecting my source and what not. Well... welcome :) If you'd ever like to chat, reach out to me at dustinschau at gmail dot com, and let's talk!
     // tech used: 
     //
      Particles.js • ityped • Sass • pug • Webpack • AWS Lamda • Serverless • Years of experience screwing around on these damn internet machines
-    //- TODO: remove the hover/press effect on mobile web
     main#fold(role="main")
       header#header
         .hero
@@ -35,9 +34,7 @@ html(lang="en")
               span.letter h
               span.letter a
               span.letter u
-          h2.role I design 
-            span.ampersand &amp; 
-            | create 
+          h2.role I develop 
             span.code-example
             |, typically using JavaScript
         #particles
@@ -98,6 +95,12 @@ html(lang="en")
           h2.title My work
           h3.subtitle Significant projects worth sharing
         .content
+          #recent-work
+            h2.examples
+              span I have developed 
+              span.example.project many projects
+              |  for 
+              span.example.client customers the world over
           .scroll-container.work-scroll
             a(href="#work-examples", role="navigation", data-scroll)
               span.text Keep on scrolling

@@ -1,6 +1,7 @@
 import 'normalize.css';
-import './index.scss';
 import './assets/web-font/css/dschau-webfont.css';
+import './critical.scss';
+import './index.scss';
 
 import init from './init';
 

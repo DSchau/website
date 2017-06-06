@@ -34,14 +34,23 @@
     @include absolute();
     background-size: cover;
     background-color: $blue-dark;
-    background-blend-mode: overlay;
-    filter: blur(3px);
+    background-blend-mode: luminosity; //overlay
+    // filter: blur(3px);
     transition: filter 250ms ease-in-out, transform 250ms ease-in-out;
     &:hover, &:active {
-      background-color: transparent;
+      background-color: transparent !important;
       filter: none;
       transform: scale(1.125);
       z-index: 2;
+    }
+    &.image-coding {
+      background-color: mix(green, $blue-light, 60%);
+    }
+    &.image-ideas {
+      background-color: mix(blue, $blue-light, 20%);
+    }
+    &.image-build-tooling {
+      background-color: mix(orange, $blue-light, 75%);
     }
   }
 

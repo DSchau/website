@@ -61,7 +61,7 @@ $form-alert-font-size: 1.65rem;
     background-color: $base-color;
     outline: none;
     color: $blue-dark;
-    font-size: round($form-element-font-size * 1.2);
+    font-size: ceil($form-element-font-size * 1.2);
     margin: 0.5rem auto;
     transition: all 250ms ease-in-out;
     text-transform: uppercase;
@@ -76,7 +76,7 @@ $form-alert-font-size: 1.65rem;
   .alert {
     .icon {
       display: block;
-      font-size: round($form-alert-font-size * 2);
+      font-size: ceil($form-alert-font-size * 2);
       margin-bottom: 1rem;
     }
     &.success {
@@ -92,7 +92,7 @@ $form-alert-font-size: 1.65rem;
       }
       .icon {
         color: $form-success-color;
-        animation: pulseStatic 5s ease-in-out infinite;
+        animation: zoomIn 1s ease-in-out;
       }
   }
   }

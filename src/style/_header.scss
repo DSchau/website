@@ -6,17 +6,16 @@
       transform: skewY(-8deg);
       transform-origin: 0;
     }
-    background: linear-gradient(mix(yellow, $base-color, 35%), $base-darken-color);
-    background-size: 400% 400%;
+    background: linear-gradient(mix(yellow, $base-color, 45%), mix(red, $base-darken-color, 10%));
+    background-size: 250% 250%;
     animation: animateBg 10s ease infinite;
     @include absolute();
-    height: 70vh;
+    height: 72.5vh;
     z-index: 3;
     display: flex;
     justify-content: center;
     align-items: left;
     flex-direction: column;
-    padding: 0.5rem;
     @media only screen and (min-width: $lg-breakpoint) {
       padding: 1rem 2rem;
       height: 80vh;
@@ -29,7 +28,7 @@
         transform: skewY(0);
         transform-origin: 0;
       }
-      height: 70vh;
+      height: 72.5vh;
       position: absolute;
       top: 0;
       right: 0;
@@ -47,11 +46,12 @@
 
   .hero {
     margin-top: 2rem;
+    max-width: 100%;
   }
 
   .name, .description {
     margin: 0;
-    padding: 0;
+    padding: 0.25rem;
     box-sizing: border-box;
     z-index: 3;
   }

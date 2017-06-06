@@ -35,7 +35,7 @@ $transition-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
       }
       .icon {
         display: inline-block;
-        font-size: round($message-font-size * 1.4);
+        font-size: ceil($message-font-size * 1.4);
         color: mix($contrast-color, $blue-dark, 25%);
         transition: all 250ms $transition-function;
         &:hover {
@@ -73,7 +73,7 @@ $transition-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
     .icon {
       display: inline-block;
       animation: pulse 2s $transition-function infinite;
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.35rem;
     }
     @media only screen and (min-width: $lg-breakpoint) {
       margin: 1rem auto;

@@ -13,6 +13,15 @@ const getConfig = env => {
   }
 };
 
+const urlLoader = options => {
+  return [
+    {
+      loader: 'url-loader',
+      options
+    }
+  ];
+};
+
 module.exports = function config({ environment = 'production' } = {}) {
   return assign(
     {
@@ -61,23 +70,44 @@ module.exports = function config({ environment = 'production' } = {}) {
           },
           {
             test: /\.jpe?g|png|gif|webp$/,
-            use: 'url-loader?limit=5000'
+            use: urlLoader({
+              limit: 2500,
+              name: './assets/images/[name].[hash].[ext]'
+            }),
+            include: path.join(__dirname, 'static')
           },
           {
             test: /\.woff2?$/,
-            use: 'url-loader?limit=10000&mimetype=application/font-woff'
+            use: urlLoader({
+              limit: 2500,
+              mimetype: 'application/font-woff',
+              name: './assets/fonts/[hash].[ext]'
+            })
           },
           {
             test: /\.ttf$/,
-            use: 'url-loader?limit=10000&mimetype=application/octet-stream'
+            use: urlLoader({
+              limit: 10000,
+              mimetype: 'application/octet-stream',
+              name: './assets/fonts/[hash].[ext]'
+            })
           },
           {
             test: /\.eot$/,
-            use: 'file-loader'
+            use: urlLoader({
+              limit: 5000,
+              mimetype: 'image/svg+xml',
+              name: './assets/fonts/[hash].[ext]'
+            })
           },
           {
             test: /\.svg$/,
-            use: 'url-loader?limit=10000&mimetype=image/svg+xml'
+            use: urlLoader({
+              limit: 5000,
+              mimetype: 'image/svg+xml',
+              name: './assets/fonts/[hash].[ext]'
+            }),
+            include: [path.join(__dirname, 'src/assets/web-font')]
           },
           {
             test: /manifest\.json$/,

@@ -55,3 +55,27 @@
     color: white;
   }
 }
+
+@mixin workExamples() {
+  #work .content {
+    justify-content: space-around;
+  }
+  #recent-work {
+    span {
+      display: block;
+    }
+    .examples {
+      font-size: 2.25rem;
+      padding: 0 0.5rem;
+      color: $blue-dark;
+      text-align: center;
+    }
+    .example, .client {
+      color: white;
+      padding: 0.25rem 0;
+      &.animate {
+        animation: zoomIn 750ms ease-in;
+      }
+    }
+  }
+}

@@ -2,41 +2,21 @@
 @import "style/animations";
 @import "style/functions";
 @import "style/typography";
-@import "style/header";
+
 @import "style/images";
 @import "style/footer";
 @import "style/form";
-@import "style/social";
 @import "style/arrows";
-@import "style/scroll";
 @import "style/sections";
 @import "style/tags";
 @import "style/typing";
 @import "style/work";
 
-html, body {
-  min-height: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100vh;
-  font-family: $base-font-family;
-  font-weight: 400;
-  ::selection {
-    background: $base-color;
-  }
-}
-
-@include header();
 @include footer();
 @include images();
 @include form();
-@include social();
 @include arrows();
-@include scroll();
 @include sections(4);
 @include tags();
-@include typing();
 @include work();
+@include workExamples();

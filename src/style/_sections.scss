@@ -38,6 +38,7 @@
     margin: 0 auto;
     margin-top: 1rem;
     padding: 0.25rem 0.75rem;
+    text-shadow: 0 0 1px rgba(black, 1) !important;
     @media only screen and (min-width: #{$lg-breakpoint}) {
       font-weight: 100;
     }
@@ -53,6 +54,7 @@
     margin: 0.5rem auto;
     border-top: 4px solid $base-color;
     border-bottom: 4px solid $base-color;
+    text-shadow: 0 0 1px rgba(black, 0.85) !important;
   }
   .subtitle {
     background-color: $base-color;
@@ -89,8 +91,10 @@
       width: 100%;
       z-index: 3;
     }
+    .item-title, .icon {
+      text-shadow: 0 0 1px rgba(black, 0.85) !important;
+    }
     .item-title {
-      font-size: 1.6rem;
       margin: 0.5rem 0;
     }
     .icon {

@@ -1,7 +1,29 @@
-$base-font-family: "Montserrat", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$base-font-family: "Montserrat", sans-serif;
+$base-serif-font-family: "Bitter", serif;
+$fallback-font-family: sans-serif;
+$fallback-serif-font-family: serif;
+$ampersand-font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+
+$active-class-name: "wf-active";
 
 .ampersand {
-  font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+  font-family: $ampersand-font-family;
   font-style: italic;
   font-weight: normal;
+}
+
+body {
+  font-family: $fallback-font-family;
+  .#{$active-class-name} & {
+    font-family: $base-font-family;
+  }
+}
+
+.title, .item-title {
+  font-family: $fallback-serif-font-family;
+  font-weight: 700;
+  font-size: 1.6rem;
+  .#{$active-class-name} & {
+    font-family: $base-serif-font-family;
+  }
 }

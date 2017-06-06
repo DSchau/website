@@ -1,4 +1,6 @@
-@mixin social($icon-size: 32px) {
+$circular-background: true;
+
+@mixin social($icon-size: 36px, $use-circle-bg: $circular-background) {
   .social-circles {
     position: absolute;
     top: 0;
@@ -15,7 +17,10 @@
       text-align: center;
       position: relative;
       color: $blue-light;
-      background-color: mix(white, $base-color, 45%);
+      @if $use-circle-bg {
+        background-color: rgba(mix(white, $base-color, 50%), 0.5);
+        box-shadow: 0 0 4px rgba($base-color, 0.5);
+      }
       height: $icon-size;
       width: $icon-size;
       border-radius: $icon-size;
@@ -30,7 +35,7 @@
       }
     }
     .icon {
-      font-size: round($icon-size * 0.65);
+      font-size: ceil($icon-size * 0.65);
       line-height: $icon-size;
     }
     .github:hover {

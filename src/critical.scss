@@ -1,0 +1,25 @@
+@import "style/variables";
+@import "style/typography";
+
+@import "style/header";
+@import "style/social";
+@import "style/scroll";
+@import "style/typing";
+
+html, body {
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  ::selection {
+    background: $base-color;
+  }
+}
+
+@include header();
+@include scroll();
+@include social();
+@include typing();
