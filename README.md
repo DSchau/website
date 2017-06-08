@@ -29,8 +29,6 @@ Great HTML template language
 
 Checkout [build/images.js](./build/images.js) for the build script
 
-The JS in [src/modernizr.js](./src/modernizr.js) applies `webp` or `no-webp`, and then CSS selectors conditionally load the correct image
-
 ### Serverless AWS Lamda for the e-mail functionality, seen in [email-handler][emailhandler]
 
 [dustinschau]: https://dustinschau.com
