@@ -100,8 +100,14 @@ $form-alert-font-size: 1.65rem;
     position: relative;
     transition: opacity 250ms ease-in-out;
     @media only screen and (min-width: #{$lg-breakpoint}) {
-      max-width: 50%;
+      max-width: 65%;
       margin: 0 auto;
+      .row {
+        display: flex;
+      }
+      label {
+        margin: 0.5rem;
+      }
     }
     &.pending {
       label, input, textarea {

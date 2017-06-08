@@ -5,10 +5,11 @@
   "private": true,
   "scripts": {
     "precommit": "lint-staged",
-    "prebuild": "del-cli \"dist/**/*\" && npm run images & npm run lint",
+    "prebuild": "del-cli \"dist/**/*\" && npm run images & npm run icons & npm run lint",
     "build": "cross-env NODE_env=production webpack --env.environment production",
     "postbuild": "node ./build/critical",
     "deploy": "cross-env NODE_ENV=production npm run push:remote",
+    "icons": "node ./build/icons",
     "images": "node ./build/images",
     "lint": "eslint \"src/**/*.js\"",
     "prettier": "prettier --write --single-quote \"src/**/*.js\"",

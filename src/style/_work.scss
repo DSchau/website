@@ -57,25 +57,38 @@
 }
 
 @mixin workExamples() {
-  #work .content {
-    justify-content: space-around;
-  }
   #recent-work {
-    span {
-      display: block;
-    }
-    .examples {
-      font-size: 2.25rem;
-      padding: 0 0.5rem;
+    width: 100%;
+  }
+  #work-description {
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    padding-bottom: 5rem;
+    position: relative;
+    .title {
       color: $blue-dark;
-      text-align: center;
+      border: none;
+      text-shadow: none !important;
     }
-    .example, .client {
-      color: white;
-      padding: 0.25rem 0;
-      &.animate {
-        animation: zoomIn 750ms ease-in;
+    .description {
+      color: mix(white, $blue-light, 35%);
+      text-shadow: none !important;
+      padding: 0.5rem 0;
+      @media only screen and (min-width: #{$lg-breakpoint}) {
+        max-width: 75%;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
       }
+    }
+    .scroll-container {
+      a {
+        color: $blue-dark;
+      }
+    }
+    @media only screen and (min-width: #{$lg-breakpoint}) {
+      width: 75%;
+      margin: 0 auto;
     }
   }
 }

@@ -3,15 +3,14 @@
 @mixin progressiveImage($image) {
   .image-#{$image} {
     background-image: url('~static/images/#{$image}-launch.jpeg');
-  }
-
-  @if str-index($image, '-full') {
-    .image-#{$image}.loaded {
+    &.loaded {
       background-image: url('~static/images/#{$image}.jpeg');
     }
-  } @else {
-    .image-#{$image} {
-      background-image: url('~static/images/#{$image}.jpeg');
+  }
+
+  @if str-index($image, '-full') == null {
+    .item .image-#{$image} {
+      background-blend-mode: luminosity;
     }
   }
 }
@@ -28,9 +27,7 @@
     @include absolute();
     background-size: cover;
     background-color: $blue-dark;
-    background-blend-mode: luminosity; //overlay
-    // filter: blur(3px);
-    transition: filter 250ms ease-in-out, transform 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
     &:hover, &:active {
       background-color: transparent !important;
       filter: none;

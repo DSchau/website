@@ -25,7 +25,10 @@ client
   .then(files => {
     const folders = files
       .filter(file => file.indexOf('/') > -1)
-      .map(folder => path.join(remotePath, folder.split('/').shift()));
+      .map(folder =>
+        path.join(remotePath, folder.split('/').slice(0, -1).join('/'))
+      )
+      .filter((name, index, arr) => arr.indexOf(name) === index);
 
     return client
       .mkdir(remotePath, true)

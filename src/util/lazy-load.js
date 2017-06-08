@@ -49,7 +49,7 @@ export const handleImages = query => {
   return io;
 };
 
-export default function lazyLoad(query = '.image.lazy') {
+export default function lazyLoad(query = '[lazy-load]') {
   const io = handleImages(query);
   return () => {
     io.disconnect();

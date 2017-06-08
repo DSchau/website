@@ -37,7 +37,7 @@ module.exports = function(config) {
       vendor: ['autosize', 'ityped', 'particles.js']
     },
     output: {
-      filename: '[name].[chunkhash].js',
+      filename: 'scripts/[name].[chunkhash].js',
       publicPath: './'
     },
     module: {

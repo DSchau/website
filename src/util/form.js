@@ -100,10 +100,7 @@ export default function handleForm(formId = 'contact-form-container') {
         submitButton.innerHTML = 'Sending&hellip;';
         formEl.classList.add('pending');
         disableElements(inputs);
-        // sendEmail()
-        new Promise(resolve => {
-          setTimeout(resolve, 2500);
-        })
+        sendEmail()
           .then(() => {
             formContainer.style.height = `${formEl.clientHeight}px`;
             formEl.remove();

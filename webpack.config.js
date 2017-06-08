@@ -13,7 +13,7 @@ const getConfig = env => {
   }
 };
 
-const urlLoader = options => {
+const getUrlLoader = (environment, options) => {
   return [
     {
       loader: 'url-loader',
@@ -23,6 +23,7 @@ const urlLoader = options => {
 };
 
 module.exports = function config({ environment = 'production' } = {}) {
+  const urlLoader = getUrlLoader.bind(undefined, environment);
   return assign(
     {
       entry: {
@@ -81,7 +82,8 @@ module.exports = function config({ environment = 'production' } = {}) {
             use: urlLoader({
               limit: 2500,
               mimetype: 'application/font-woff',
-              name: './assets/fonts/[hash].[ext]'
+              name: './assets/fonts/[hash].[ext]',
+              publicPath: ''
             })
           },
           {

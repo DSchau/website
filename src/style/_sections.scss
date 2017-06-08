@@ -1,6 +1,6 @@
 @import "util";
 
-@mixin sections($loop-count: 4) {
+@mixin sections($loop-count: 4, $subtitle-effect: false) {
   section {
     @include flex-center(true);
     min-height: 100vh;
@@ -57,11 +57,29 @@
     text-shadow: 0 0 1px rgba(black, 0.85) !important;
   }
   .subtitle {
-    background-color: $base-color;
+    background-color: if($subtitle-effect, transparent, $base-color);
     color: white;
     font-size: 1.1rem;
     font-weight: 100;
     padding: 0.25rem 1rem;
+    box-sizing: border-box;
+    @if $subtitle-effect {
+      display: table;
+      white-space: nowrap;
+      &:before, &:after {
+        border-top: 1px solid rgba(white, 0.5);
+        content: '';
+        display: table-cell;
+        position: relative;
+        top: 0.65rem;
+        width: 45%;
+      }
+      &:before { right: 1%; }
+      &:after { left: 1%; }
+    }
+  }
+  &.has-scroll {
+    padding-bottom: 5rem;
   }
   .group {
     list-style-type: none;

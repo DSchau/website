@@ -1,13 +1,13 @@
-const glob = require('glob');
 const sharp = require('sharp');
 const path = require('path');
 const mkdir = require('mkdirp');
+const glob = require('glob');
 const del = require('del');
 
 const src = path.resolve('./src/assets/images');
 const dest = path.resolve('./static/images');
 
-const getFiles = () => {
+const getFiles = src => {
   return new Promise((resolve, reject) => {
     glob(path.join(src, '*.{jpg,jpeg,gif,png}'), (err, files) => {
       if (err) {
@@ -37,7 +37,7 @@ const outputFile = (
 };
 
 del(`${dest}/**/*`)
-  .then(() => getFiles())
+  .then(() => getFiles(src))
   .then(files => {
     return new Promise((resolve, reject) => {
       return mkdir(dest, err => {
@@ -61,5 +61,5 @@ del(`${dest}/**/*`)
     );
   })
   .then(() => {
-    console.log('All files written successfully');
+    console.log('All images written successfully');
   });

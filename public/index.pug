@@ -12,6 +12,7 @@ html(lang="en")
     meta(name="theme-color", content="#FF6138")
     link(href="https://fonts.gstatic.com", rel="preconnect", crossorigin)
     link(rel="manifest", href=require('static/manifest.json'))
+    link(rel="apple-touch-icon", href="./assets/icons/192x192.png")
   body
     // Oh hi, look at you all up in my business inspecting my source and what not. Well... welcome :) If you'd ever like to chat, reach out to me at dustinschau at gmail dot com, and let's talk!
     // tech used: 
@@ -59,12 +60,12 @@ html(lang="en")
       section#expertise
         .heading
           h2.title My skills
-          h3.subtitle aka the areas in which I'd claim to be the "real MVP"
+          h3.subtitle The areas in which I'd claim to be the "real MVP"
         .content
           ul.group
             li.group-item
               .item
-                .image.image-coding(alt="Computer code")
+                .image.image-coding(alt="Computer code", lazy-load)
                 .overlay
                   h3.item-title Development
                   i.icon.icon-code(aria-hidden="true")
@@ -73,7 +74,7 @@ html(lang="en")
                 | of problems, and brought countless ideas to fruition
             li.group-item
               .item
-                .image.image-ideas(alt="Notepad sketching ideas")
+                .image.image-ideas(alt="Notepad sketching ideas", lazy-load)
                 .overlay
                   h3.item-title Design
                   i.icon.icon-beaker(aria-hidden="true")
@@ -82,7 +83,7 @@ html(lang="en")
                 | and my years of UI/UX experience and eye for detail are key drivers for my passion in designing immersive, beautiful, and pixel perfect applications
             li.group-item
               .item
-                .image.image-build-tooling(alt="Hammer signifying build tools")
+                .image.image-build-tooling(alt="Hammer signifying build tools", lazy-load)
                 .overlay
                   h3.item-title Build tooling
                   i.icon.icon-tools(aria-hidden="true")
@@ -90,28 +91,30 @@ html(lang="en")
                 em et al  
                 | config, I've done a bit of everything, and bring years of build tooling knowledge and know-how to any project
 
-      section#work
+      section#work.has-scroll
         .heading
           h2.title My work
-          h3.subtitle Significant projects worth sharing
+          h3.subtitle What I do and what I've done
         .content
-          #recent-work
-            h2.examples
-              span I have developed 
-              span.example.project many projects
-              |  for 
-              span.example.client customers the world over
-          .scroll-container.work-scroll
-            a(href="#work-examples", role="navigation", data-scroll)
-              span.text Keep on scrolling
-              i.icon.icon-down-open(aria-hidden="true")
+          #work-description
+            //- h3.title My work
+            p.description As a front-end developer, my work can be drastically different day-to-day. Some days I'll be writing highly performant web applications using Angular, React, or the framework 
+              em du jour. 
+              | Other days I'll be working on standalone web components that can be easily distributed, consumed, and integrated. Still others  you'll find me tweaking build tooling in order to maximize performance and automate tasks to get developers working on what truly matters. Front-end development is my passion, and I am incredibly lucky to be able to  
+              strong love 
+              | what I do each and every day.
+            .scroll-container
+              a(href="#work-examples", role="navigation", data-scroll)
+                span.text Examples below
+                i.icon.icon-down-open(aria-hidden="true")
 
       section#work-examples.examples
         article#highlight.work
-          .image.image-connected-driver-full.lazy
+          .image.image-connected-driver-full(lazy-load)
           .heading
             h2.title Connected Driver
-            h3.subtitle PeopleNet, Inc.
+            h3.subtitle
+              span PeopleNet, Inc.
 
           .content
             p.description Connected Driver is a hybrid application available in both the Google Play Store and Apple App Store. It is used by more than ten thousand users each month!
@@ -123,12 +126,13 @@ html(lang="en")
               li.tag Webpack
 
         article#secondary.work
-          .image.image-speaking-full.lazy
+          .image.image-speaking-full(lazy-load)
           .heading
             h2.title Speaking 
               span.ampersand &amp; 
               | workshops
-            h3.subtitle Full day workshops, presentations on JavaScript, front-end tooling, frameworks, etc.
+            h3.subtitle
+              span Full day workshops, presentations on JavaScript, front-end tooling, frameworks, etc.
           .content
             p.description Throughout my career, I've been privileged enough to get the opportunity to speak on a variety of topics and lead or assist with several workshops, including such topics as build tooling, framework comparisons, Angular, React, etc.&hellip; effectively "all things Javascript!"
             ul.tags
@@ -139,12 +143,13 @@ html(lang="en")
               li.tag JavaScript
 
         article#supporting.work
-          .image.image-build-tooling-full.lazy
+          .image.image-build-tooling-full(lazy-load)
           .heading
             h2.title Build tooling 
               span.ampersand &amp; 
               | optimizations
-            h3.subtitle Webpack, gulp, grunt, custom Node scripts&hellip; been there, done that!
+            h3.subtitle
+              span Webpack, gulp, grunt, custom Node scripts&hellip; been there, done that!
           .content
             p.description From revamping a monolithic Webpack config (check out my npm package, 
               a(href="https://www.npmjs.com/package/webpack-config-assign")
@@ -167,13 +172,14 @@ html(lang="en")
               i.icon.icon-ok-circled(aria-hidden="true")
               h3.message Got it! I'll be in touch.
             form(id="contact-form", novalidate)
-              label(for="name") What's your name?
-                input(id="name", type="text", aria-required="true")
-              label(for="email") What's your email?
-                input(id="email", type="email", aria-required="true")
+              .row
+                label(for="name") What's your name?
+                  input(id="name", type="text", aria-required="true")
+                label(for="email") What's your email?
+                  input(id="email", type="email", aria-required="true")
               label(for="message") What's up?
                 textarea(id="message", type="text", rows="3",  aria-required="true")
-              button#submit(type="submit") Send it!
+              button#submit(type="submit") Send
       footer(role="contentinfo")
         .social
           h3.message Made with
