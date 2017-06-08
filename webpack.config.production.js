@@ -42,6 +42,7 @@ module.exports = function(config) {
     },
     module: {
       rules: [
+        // presumes all CSS files are critical (e.g. normalize.css, webfont, etc.)
         {
           test: /\.css$/,
           use: extractCriticalCSS.extract({

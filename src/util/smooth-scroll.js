@@ -3,7 +3,7 @@ import { polyfill } from 'smoothscroll-polyfill';
 export default () => {
   polyfill();
 
-  let listeners = Array.prototype.slice
+  const listeners = Array.prototype.slice
     .call(document.querySelectorAll('[data-scroll]'))
     .filter(el => {
       const href = el.getAttribute('href');

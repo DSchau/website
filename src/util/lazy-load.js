@@ -18,15 +18,14 @@ export const getImageName = classList => {
   return '';
 };
 
-export const lazyLoadImage = imagePath => {
-  return new Promise(resolve => {
+export const lazyLoadImage = imagePath =>
+  new Promise(resolve => {
     const image = new Image();
 
     image.src = imagesContext(imagePath);
 
     image.onload = () => resolve();
   });
-};
 
 export const handleImages = query => {
   const io = new IntersectionObserver(entries => {

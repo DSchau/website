@@ -25,7 +25,7 @@ export function getFormElements(
 export function elementIsValid(element, validators = VALIDATORS) {
   const type = element.getAttribute('type') || 'text';
   if (element.value) {
-    return (VALIDATORS[type] || VALIDATORS.text).test(element.value);
+    return (validators[type] || validators.text).test(element.value);
   }
   return false;
 }
@@ -81,8 +81,8 @@ export function enableElements(elements) {
   });
 }
 
-export default function handleForm(id = 'contact-form-container') {
-  const formContainer = document.getElementById(id);
+export default function handleForm(formId = 'contact-form-container') {
+  const formContainer = document.getElementById(formId);
   const formEl = formContainer.querySelector('form');
   const alertEl = formContainer.querySelector('.alert');
   const formElements = getFormElements([]);
@@ -121,7 +121,5 @@ export default function handleForm(id = 'contact-form-container') {
 
   formEl.addEventListener('submit', submitCallback);
 
-  return () => {
-    return formEl.removeEventListener('submit', submitCallback);
-  };
+  return () => formEl.removeEventListener('submit', submitCallback);
 }
