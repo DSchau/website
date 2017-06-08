@@ -1,5 +1,3 @@
-import supportsWebP from 'supports-webp';
-
 const imagesContext = require.context('static/images');
 
 export const idleCallback = callback => {
@@ -12,7 +10,7 @@ export const idleCallback = callback => {
 export const getImageName = classList => {
   for (let i = 0; i < classList.length; i++) {
     if (classList[i].match(/image-/)) {
-      return `./${classList[i].replace('image-', '')}.${supportsWebP ? 'webp' : 'jpeg'}`;
+      return `./${classList[i].replace('image-', '')}.jpeg`;
     }
   }
   return '';

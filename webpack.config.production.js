@@ -34,7 +34,7 @@ module.exports = function(config) {
   return {
     devtool: 'source-map',
     entry: {
-      vendor: ['autosize', 'ityped', 'particles.js', 'supports-webp']
+      vendor: ['autosize', 'ityped', 'particles.js']
     },
     output: {
       filename: '[name].[chunkhash].js',

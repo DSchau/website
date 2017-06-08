@@ -3,7 +3,6 @@ import particles from './util/particles';
 import smoothScroll from './util/smooth-scroll';
 import typed from './util/typed';
 import autosize from './util/autosize';
-import modernizr from './util/modernizr';
 import webFonts from './util/web-fonts';
 
 import handleForm from './util/form';
@@ -32,7 +31,6 @@ export default function init() {
     lazy: lazyLoad()
   };
 
-  modernizr();
   log();
   webFonts();
 

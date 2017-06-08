@@ -6,17 +6,11 @@
   }
 
   @if str-index($image, '-full') {
-    .webp .image-#{$image}.loaded {
-      background-image: url('~static/images/#{$image}.webp');
-    }
-    .no-webp .image-#{$image}.loaded {
+    .image-#{$image}.loaded {
       background-image: url('~static/images/#{$image}.jpeg');
     }
   } @else {
-    .webp .image-#{$image} {
-      background-image: url('~static/images/#{$image}.webp');
-    }
-    .no-webp .image-#{$image} {
+    .image-#{$image} {
       background-image: url('~static/images/#{$image}.jpeg');
     }
   }

@@ -29,7 +29,6 @@
     "offline-plugin": "~4.8.1",
     "particles.js": "dschau/particles.js#f421a5bd31efd572842645884c803c0c09d364fe",
     "smoothscroll-polyfill": "~0.3.5",
-    "supports-webp": "~1.0.5",
     "unfetch": "~2.1.2",
     "webfontloader": "~1.6.28"
   },
