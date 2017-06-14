@@ -1,6 +1,7 @@
 @import "style/variables";
 @import "style/typography";
 
+@import "style/alert";
 @import "style/header";
 @import "style/social";
 @import "style/scroll";
@@ -19,6 +20,7 @@ body {
   }
 }
 
+@include alert();
 @include header();
 @include scroll();
 @include social();

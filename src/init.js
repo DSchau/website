@@ -17,7 +17,22 @@ export default function init() {
         runtime.applyUpdate();
       },
       onUpdated() {
-        window.location.reload();
+        const reload = () => window.location.reload();
+        document.documentElement.classList.add('has-alert');
+        const reloadButton = document.querySelector('#alert button');
+        reloadButton.addEventListener('click', reload);
+
+        const countEl = reloadButton.querySelector('.count');
+
+        setInterval(() => {
+          const count = parseInt(countEl.innerHTML);
+          const reduced = count - 1;
+          if (reduced === 0) {
+            reload();
+          } else {
+            countEl.innerHTML = reduced;
+          }
+        }, 1000);
       }
     });
   }
