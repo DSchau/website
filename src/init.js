@@ -25,7 +25,7 @@ export default function init() {
         const countEl = reloadButton.querySelector('.count');
 
         setInterval(() => {
-          const count = parseInt(countEl.innerHTML);
+          const count = parseInt(countEl.innerHTML, 10);
           const reduced = count - 1;
           if (reduced === 0) {
             reload();
