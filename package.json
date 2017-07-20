@@ -6,7 +6,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "prebuild": "del-cli \"dist/**/*\" && npm run images & npm run icons & npm run lint",
-    "build": "cross-env NODE_env=production webpack --env.environment production",
+    "build": "cross-env NODE_env=production webpack --env.environment production --hide-modules",
     "postbuild": "node ./build/critical",
     "deploy": "cross-env NODE_ENV=production npm run push:remote",
     "icons": "node ./build/icons",
