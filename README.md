@@ -1,5 +1,7 @@
 # Website
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/DSchau/website.svg)](https://greenkeeper.io/)
+
 The repository for the latest iteration of [dustinschau.com][dustinschau]
 
 ## Tech Used
