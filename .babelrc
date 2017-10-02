@@ -1,2 +1,3 @@
 {
+  "presets": ["./node_modules/webpack-config/dist/config-files/babelrc.js"]
 }
