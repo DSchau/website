@@ -14,6 +14,35 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@dschau/particles.js/-/particles.js-2.0.0.tgz#7eff39237c4b2528598a344f52372e27c69b6e23"
 
+"@dschau/webpack-config@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@dschau/webpack-config/-/webpack-config-0.0.1.tgz#03b8373335f477561db6f7621d5a62ca1e8d219b"
+  dependencies:
+    autoprefixer "~7.1.1"
+    babel-core "~6.25.0"
+    babel-loader "~7.0.0"
+    babel-plugin-syntax-dynamic-import "~6.18.0"
+    babel-preset-env "~1.5.2"
+    css-loader "~0.28.4"
+    cssnano "~3.10.0"
+    extract-text-webpack-plugin "~2.1.2"
+    file-loader "~0.11.2"
+    html-webpack-plugin "~2.28.0"
+    name-all-modules-plugin "~1.0.1"
+    node-sass "~4.5.3"
+    object.omit "~2.0.1"
+    offline-plugin "~4.8.1"
+    postcss "~6.0.2"
+    postcss-loader "~2.0.5"
+    pug "~2.0.0-rc.2"
+    pug-loader "~2.3.0"
+    sass-loader "~6.0.5"
+    style-ext-html-webpack-plugin "~3.4.1"
+    style-loader "~0.18.2"
+    url-loader "~0.5.9"
+    webpack "~2.6.1"
+    webpack-config-assign "~1.0.0"
+
 "@types/node@^6.0.46":
   version "6.0.78"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.78.tgz#5d4a3f579c1524e01ee21bf474e6fba09198f470"
@@ -3746,7 +3775,7 @@ jest-validate@^21.2.1:
     leven "^2.1.0"
     pretty-format "^21.2.1"
 
-jest@^21.2.1:
+jest@~21.2.1:
   version "21.2.1"
   resolved "https://registry.yarnpkg.com/jest/-/jest-21.2.1.tgz#c964e0b47383768a1438e3ccf3c3d470327604e1"
   dependencies:
@@ -6702,35 +6731,6 @@ webpack-config-assign@~1.0.0:
     is-equal-regex "~0.1.0"
     lodash.clone "~4.5.0"
     object-assign "~4.1.0"
-
-webpack-config@dschau/webpack-config:
-  version "1.0.0"
-  resolved "https://codeload.github.com/dschau/webpack-config/tar.gz/36426ca6389f30b4721cebb6b3be32e8fb487054"
-  dependencies:
-    autoprefixer "~7.1.1"
-    babel-core "~6.25.0"
-    babel-loader "~7.0.0"
-    babel-plugin-syntax-dynamic-import "~6.18.0"
-    babel-preset-env "~1.5.2"
-    css-loader "~0.28.4"
-    cssnano "~3.10.0"
-    extract-text-webpack-plugin "~2.1.2"
-    file-loader "~0.11.2"
-    html-webpack-plugin "~2.28.0"
-    name-all-modules-plugin "~1.0.1"
-    node-sass "~4.5.3"
-    object.omit "~2.0.1"
-    offline-plugin "~4.8.1"
-    postcss "~6.0.2"
-    postcss-loader "~2.0.5"
-    pug "~2.0.0-rc.2"
-    pug-loader "~2.3.0"
-    sass-loader "~6.0.5"
-    style-ext-html-webpack-plugin "~3.4.1"
-    style-loader "~0.18.2"
-    url-loader "~0.5.9"
-    webpack "~2.6.1"
-    webpack-config-assign "~1.0.0"
 
 webpack-dev-middleware@^1.10.2:
   version "1.10.2"

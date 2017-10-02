@@ -3,13 +3,13 @@ const spies = {
   destroy: jest.fn()
 };
 
-const particlesJS = function (...args) {
+const particlesJS = function(...args) {
   spies.constructor(...args);
 };
 
 particlesJS.spies = spies;
 
-particlesJS.destroy = function (...args) {
+particlesJS.destroy = function(...args) {
   spies.destroy(...args);
 };
 
