@@ -1,4 +1,4 @@
-import ParticleJS from 'particles.js';
+import ParticleJS from '@dschau/particles.js';
 import particlesConfig from 'static/particles-config-lines.json';
 
 export default selector => {

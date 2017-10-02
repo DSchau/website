@@ -1,4 +1,4 @@
-import { FORM_URL } from '../constants/urls';
+import { FORM_URL } from '../constants';
 
 const EXCLUDED_FORM_ELEMENTS = ['BUTTON'];
 

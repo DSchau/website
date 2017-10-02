@@ -1,4 +1,4 @@
-import * as forms from '../../src/util/form';
+import * as forms from '../form';
 
 const mockElement = (attributes = {}) => {
   return {

@@ -6,9 +6,9 @@
   "scripts": {
     "precommit": "lint-staged",
     "prebuild": "del-cli \"dist/**/*\" && npm run images & npm run icons & npm run lint",
-    "build": "cross-env NODE_env=production webpack --env.environment production --hide-modules",
+    "build": "cross-env NODE_ENV=production webpack --env.environment production --hide-modules",
     "postbuild": "node ./build/critical",
-    "deploy": "cross-env NODE_ENV=production npm run push:remote",
+    "deploy": "cross-env NODE_ENV=production deploy-to-ftp-server",
     "icons": "node ./build/icons",
     "images": "node ./build/images",
     "lint": "eslint \"src/**/*.js\"",
@@ -17,10 +17,10 @@
     "prepush:remote": "npm run build",
     "push:remote": "node ./build/deploy",
     "start": "webpack-dev-server --env.environment development --hot --quiet --inline --content-base . --content-base static",
-    "test": "jest --no-watchman --no-cache",
-    "test:watch": "npm run test -- --watch"
+    "test": "jest --no-cache"
   },
   "dependencies": {
+    "@dschau/particles.js": "^2.0.0",
     "autosize": "~3.0.20",
     "es6-promise": "~4.1.0",
     "intersection-observer": "~0.2.1",
@@ -28,15 +28,14 @@
     "minireset.css": "~0.0.3",
     "normalize.css": "~7.0.0",
     "offline-plugin": "~4.8.1",
-    "particles.js": "dschau/particles.js#f421a5bd31efd572842645884c803c0c09d364fe",
     "smoothscroll-polyfill": "~0.3.5",
     "unfetch": "~2.1.2",
     "webfontloader": "~1.6.28"
   },
   "devDependencies": {
+    "@dschau/deploy-to-ftp-server": "^1.0.0",
     "babel-eslint": "~7.2.3",
     "cheerio": "~1.0.0-rc.1",
-    "config": "~1.26.1",
     "cross-env": "~5.0.1",
     "del": "~2.2.2",
     "del-cli": "~1.0.0",
@@ -47,7 +46,7 @@
     "glob": "~7.1.1",
     "gm": "~1.23.0",
     "husky": "~0.13.3",
-    "jest": "~20.0.3",
+    "jest": "~21.2.1",
     "lint-staged": "~3.4.2",
     "mkdirp": "~0.5.1",
     "mz": "~2.6.0",

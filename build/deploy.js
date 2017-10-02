@@ -16,7 +16,11 @@ const localPath = config.get('local');
 const remotePath = config.get('remote');
 
 client
-  .connect(config.get('ftp'))
+  .connect({
+    host: process.env.FTP_HOST,
+    user: process.env.FTP_USER,
+    password: process.env.FTP_PASSWORD
+  })
   .then(connected => {
     return readdir(path.resolve(localPath)).then(files => {
       return files.map(file => file.split(path.join(localPath, '/')).pop());
