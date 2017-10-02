@@ -1,3 +1,3 @@
-const { getWebpackConfig } = require('webpack-config');
+const { getWebpackConfig } = require('@dschau/webpack-config');
 
 module.exports = getWebpackConfig();

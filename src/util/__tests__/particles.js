@@ -1,7 +1,7 @@
-jest.mock('particles.js');
+jest.mock('@dschau/particles.js');
 
-import particles from '../../src/util/particles';
-import particlesJS from 'particles.js';
+import particles from '../particles';
+import particlesJS from '@dschau/particles.js';
 
 describe('particles', () => {
   it('exports a function', () => {
