@@ -14,10 +14,8 @@
     "lint": "eslint \"src/**/*.js\"",
     "prettier": "prettier --write --single-quote \"src/**/*.js\"",
     "prettier:all": "prettier --write --single-quote \"webpack.config.*.js\" \"build/**/*.js\" \"__tests__/**/*/js\" \"__mocks__/**/*/js\"",
-    "prepush:remote": "npm run build",
-    "push:remote": "node ./build/deploy",
     "start": "webpack-dev-server --env.environment development --hot --quiet --inline --content-base . --content-base static",
-    "test": "jest --no-cache"
+    "test": "jest"
   },
   "dependencies": {
     "@dschau/particles.js": "^2.0.0",
