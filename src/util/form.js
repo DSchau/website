@@ -3,8 +3,8 @@ import { FORM_URL } from '../constants';
 const EXCLUDED_FORM_ELEMENTS = ['BUTTON'];
 
 const VALIDATORS = {
-  text: /^.+$/,
-  email: /.+@.+\..+/
+  text: value => value.length > 0,
+  email: value => /.+@.+\..+/.test(value)
 };
 
 let SUBMITTED = false;
@@ -25,7 +25,7 @@ export function getFormElements(
 export function elementIsValid(element, validators = VALIDATORS) {
   const type = element.getAttribute('type') || 'text';
   if (element.value) {
-    return (validators[type] || validators.text).test(element.value);
+    return (validators[type] || validators.text)(element.value);
   }
   return false;
 }
