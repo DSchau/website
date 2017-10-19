@@ -8,7 +8,6 @@
     "prebuild": "del-cli \"dist/**/*\" && npm run images & npm run icons & npm run lint",
     "build": "cross-env NODE_ENV=production webpack --env.environment production --hide-modules",
     "postbuild": "node ./build/critical",
-    "deploy": "cross-env NODE_ENV=production deploy-to-ftp-server",
     "icons": "node ./build/icons",
     "images": "node ./build/images",
     "lint": "eslint \"src/**/*.js\"",
@@ -31,7 +30,6 @@
     "webfontloader": "~1.6.28"
   },
   "devDependencies": {
-    "@dschau/deploy-to-ftp-server": "^1.0.0",
     "@dschau/webpack-config": "^0.0.1",
     "babel-eslint": "~7.2.3",
     "babel-jest": "^21.2.0",

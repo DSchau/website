@@ -12,8 +12,12 @@ after_script: greenkeeper-lockfile-upload
 
 before_deploy: yarn build
 deploy:
-  provider: script
-  script: yarn deploy
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: "dustinschau.com"
   skip_cleanup: true
+  local-dir: dist
+  acl: public_read
   on:
     branch: master
