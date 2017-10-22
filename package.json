@@ -8,11 +8,11 @@
     "prebuild": "del-cli \"dist/**/*\" && npm run images & npm run icons & npm run lint",
     "build": "cross-env NODE_ENV=production webpack --env.environment production --hide-modules",
     "postbuild": "node ./build/critical",
+    "format": "prettier --write --single-quote \"src/**/*.js\"",
+    "format:all": "prettier --write --single-quote \"webpack.config.*.js\" \"build/**/*.js\" \"__tests__/**/*/js\" \"__mocks__/**/*/js\"",
     "icons": "node ./build/icons",
     "images": "node ./build/images",
     "lint": "eslint \"src/**/*.js\"",
-    "prettier": "prettier --write --single-quote \"src/**/*.js\"",
-    "prettier:all": "prettier --write --single-quote \"webpack.config.*.js\" \"build/**/*.js\" \"__tests__/**/*/js\" \"__mocks__/**/*/js\"",
     "start": "webpack-dev-server --env.environment development --hot --quiet --inline --content-base . --content-base static",
     "test": "jest"
   },
