@@ -1,8 +1,10 @@
 const sharp = require('sharp');
+const potrace = require('potrace');
 const path = require('path');
 const mkdir = require('mkdirp');
 const glob = require('glob');
 const del = require('del');
+const fs = require('mz/fs');
 
 const src = path.resolve('./src/assets/images');
 const dest = path.resolve('./static/images');
@@ -36,6 +38,28 @@ const outputFile = (
   return stream[extension]({ quality }).toFile(path.join(dest, fileName));
 };
 
+const traceFile = file => {
+  const name = file
+    .split(src)
+    .pop()
+    .split('.')
+    .shift()
+    .split('-')
+    .slice(0, -1)
+    .join('-');
+  return new Promise((resolve, reject) => {
+    potrace.trace(file, (err, svg) => {
+      if (err) {
+        return reject(err);
+      }
+      return fs
+        .writeFile(path.join(dest, `${name}.svg`), svg, 'utf8')
+        .then(resolve)
+        .catch(reject);
+    });
+  });
+};
+
 del(`${dest}/**/*`)
   .then(() => getFiles(src))
   .then(files => {
@@ -56,7 +80,7 @@ del(`${dest}/**/*`)
           outputFile(file, 'jpeg', size),
           outputFile(file, 'jpeg', size, true),
           outputFile(file, 'webp', size)
-        ]);
+        ]).then(() => traceFile(file));
       })
     );
   })

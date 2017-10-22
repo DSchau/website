@@ -2,7 +2,7 @@
 
 @mixin progressiveImage($image) {
   .image-#{$image} {
-    background-image: url('~static/images/#{$image}-launch.jpeg');
+    background-image: url('~static/images/#{$image}.svg');
     &.loaded {
       background-image: url('~static/images/#{$image}.jpeg');
     }
@@ -27,7 +27,7 @@
     @include absolute();
     background-size: cover;
     background-color: $blue-dark;
-    transition: all 250ms ease-in-out;
+    transition: 250ms ease-in-out;
     &:hover, &:active {
       background-color: transparent !important;
       filter: none;
