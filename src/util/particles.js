@@ -1,7 +1,7 @@
 import ParticleJS from '@dschau/particles.js';
 import particlesConfig from 'static/particles-config-lines.json';
 
-export default selector => {
+export const particles = selector => {
   const instances = []
     .concat(selector)
     .map(instance => ParticleJS(instance, particlesConfig));

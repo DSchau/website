@@ -81,7 +81,7 @@ export function enableElements(elements) {
   });
 }
 
-export default function handleForm(formId = 'contact-form-container') {
+export function handleForm(formId = 'contact-form-container') {
   const formContainer = document.getElementById(formId);
   const formEl = formContainer.querySelector('form');
   const alertEl = formContainer.querySelector('.alert');

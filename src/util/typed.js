@@ -1,6 +1,6 @@
 import { init, destroy } from 'ityped';
 
-export default function header() {
+export function typed() {
   const el = document.querySelector('.code-example');
   init(el, {
     strings: [

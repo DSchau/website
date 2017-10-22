@@ -1,6 +1,6 @@
 import { polyfill } from 'smoothscroll-polyfill';
 
-export default () => {
+export const smoothScroll = () => {
   polyfill();
 
   const listeners = Array.prototype.slice

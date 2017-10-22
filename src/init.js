@@ -1,12 +1,14 @@
-import lazyLoad from './util/lazy-load';
-import particles from './util/particles';
-import smoothScroll from './util/smooth-scroll';
-import typed from './util/typed';
-import autosize from './util/autosize';
-import webFonts from './util/web-fonts';
-
-import handleForm from './util/form';
-import log from './util/log';
+import {
+  lazyLoad,
+  particles,
+  smoothScroll,
+  typed,
+  autosize,
+  webFonts,
+  handleForm,
+  logToConsole,
+  romanize
+} from './util';
 
 export default function init() {
   if (process.env.NODE_ENV === 'production') {
@@ -46,10 +48,12 @@ export default function init() {
     lazy: lazyLoad()
   };
 
-  log();
+  logToConsole();
   webFonts();
 
-  document.getElementById('year').innerHTML = new Date().getFullYear();
+  document.getElementById('year').innerHTML = romanize(
+    new Date().getFullYear()
+  );
 
   return {
     destroy(str) {

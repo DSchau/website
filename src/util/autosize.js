@@ -1,6 +1,6 @@
 import autosize from 'autosize';
 
-export default function autosizeTextareas(textAreas = ['message']) {
+function autosizeTextareas(textAreas = ['message']) {
   const areas = [].concat(textAreas || []).map(id => {
     const el = document.getElementById(id);
     autosize(el);
@@ -11,3 +11,5 @@ export default function autosizeTextareas(textAreas = ['message']) {
     areas.slice(0).forEach(destroy => destroy());
   };
 }
+
+export { autosizeTextareas as autosize };
