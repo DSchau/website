@@ -21,6 +21,7 @@ module.exports = {
     'no-console': 'off',
     'no-param-reassign': 'off',
     'no-plusplus': 'off',
+    'no-mixed-operators': 'off',
     quotes: [
       'error',
       'single',
