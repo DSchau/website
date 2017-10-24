@@ -32,8 +32,12 @@ $form-alert-font-size: 1.65rem;
     padding: $form-element-padding;
     box-sizing: border-box;
     outline: none;
-    transition: box-shadow 125ms ease-in-out, border 125ms ease-in-out, background 125ms ease-in-out;
     position: relative;
+    font-family: sans-serif;
+    font-size: 18px;
+    .wf-active & {
+      font-family: "Montserrat", sans-serif;
+    }
     &.invalid {
       border-color: $form-invalid-color;
       @include focus($form-invalid-color);
@@ -63,7 +67,7 @@ $form-alert-font-size: 1.65rem;
     color: $blue-dark;
     font-size: ceil($form-element-font-size * 1.2);
     margin: 0.5rem auto;
-    transition: all 250ms ease-in-out;
+    transition: 250ms ease-in-out;
     text-transform: uppercase;
     cursor: pointer;
     &:focus, &:hover {
