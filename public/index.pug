@@ -184,11 +184,11 @@ html(lang="en")
             )
               .row
                 label(for="name") What's your name?
-                  input(id="name", type="text", aria-required="true")
+                  input(id="name", name="name", type="text", aria-required="true")
                 label(for="email") What's your email?
-                  input(id="email", type="email", aria-required="true")
+                  input(id="email", name="email", type="email", aria-required="true")
               label(for="message") What's up?
-                textarea(id="message", type="text", rows="3",  aria-required="true")
+                textarea(id="message", name="message", type="text", rows="3",  aria-required="true")
               button#submit(type="submit") Send
       footer(role="contentinfo")
         .social
