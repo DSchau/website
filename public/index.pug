@@ -174,7 +174,14 @@ html(lang="en")
             .alert.success.hide
               i.icon.icon-ok-circled(aria-hidden="true")
               h3.message Got it! I'll be in touch.
-            form(id="contact-form", novalidate)
+            form(
+              id="contact-form",
+              name="contact-form",
+              enctype="application/x-www-form-urlencoded",
+              method="post",
+              action="https://api.dustinschau.com/v1/email",
+              novalidate
+            )
               .row
                 label(for="name") What's your name?
                   input(id="name", type="text", aria-required="true")
