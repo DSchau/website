@@ -62,13 +62,9 @@ export function sendEmail(url = FORM_URL) {
     fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
-      body: Object.keys(form)
-        .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(form[key])}`
-        )
-        .join('&')
+      body: JSON.stringify(form)
     }),
     new Promise((resolve, reject) => {
       setTimeout(() => reject('Service call failed'), 5000);
