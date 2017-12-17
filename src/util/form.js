@@ -61,7 +61,14 @@ export function sendEmail(url = FORM_URL) {
   return Promise.race([
     fetch(url, {
       method: 'POST',
-      body: JSON.stringify(form)
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: Object.keys(form)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(form[key])}`
+        )
+        .join('&')
     }),
     new Promise((resolve, reject) => {
       setTimeout(() => reject('Service call failed'), 5000);
