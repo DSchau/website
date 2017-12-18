@@ -61,6 +61,7 @@ export function sendEmail(url = FORM_URL) {
   return Promise.race([
     fetch(url, {
       method: 'POST',
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
