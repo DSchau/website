@@ -65,12 +65,16 @@ export function sendEmail(url = FORM_URL) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(form)
-    }).then(response => {
-      if (response.status === 302) {
-        return null;
-      }
-      return Promise.reject('Failed form submission');
-    }),
+    })
+      .then(response => {
+        if (response.status === 302) {
+          return null;
+        }
+        return Promise.reject('Failed form submission');
+      })
+      .catch(err => {
+        console.warn(err, Object.keys(err));
+      }),
     new Promise((resolve, reject) => {
       setTimeout(() => reject('Service call failed'), 5000);
     })
@@ -115,6 +119,7 @@ export function handleForm(formId = 'contact-form-container') {
             alertEl.classList.remove('hide');
           })
           .catch(e => {
+            SUBMITTED = false;
             enableElements(inputs);
             formEl.classList.remove('pending');
             submitButton.innerHTML = submitButtonContent;
