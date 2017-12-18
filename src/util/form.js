@@ -65,7 +65,10 @@ export function sendEmail(url = FORM_URL) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(form)
-    }),
+    }).then(
+      response =>
+        response.status === 302 ? null : Promise.reject('Failed form response')
+    ),
     new Promise((resolve, reject) => {
       setTimeout(() => reject('Service call failed'), 5000);
     })
