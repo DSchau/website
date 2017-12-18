@@ -61,21 +61,11 @@ export function sendEmail(url = FORM_URL) {
   return Promise.race([
     fetch(url, {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(form)
-    })
-      .then(response => {
-        if (response.status === 302) {
-          return null;
-        }
-        return Promise.reject('Failed form submission');
-      })
-      .catch(err => {
-        console.warn(err, Object.keys(err));
-      }),
+    }),
     new Promise((resolve, reject) => {
       setTimeout(() => reject('Service call failed'), 5000);
     })
