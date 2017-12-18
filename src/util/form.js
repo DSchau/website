@@ -61,6 +61,9 @@ export function sendEmail(url = FORM_URL) {
   return Promise.race([
     fetch(url, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(form)
     }),
     new Promise((resolve, reject) => {
@@ -107,6 +110,7 @@ export function handleForm(formId = 'contact-form-container') {
             alertEl.classList.remove('hide');
           })
           .catch(e => {
+            SUBMITTED = false;
             enableElements(inputs);
             formEl.classList.remove('pending');
             submitButton.innerHTML = submitButtonContent;
