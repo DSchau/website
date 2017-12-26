@@ -1,6 +1,6 @@
 import { FORM_URL } from '../constants';
 
-const EXCLUDED_FORM_ELEMENTS = ['BUTTON'];
+const EXCLUDED_FORM_ELEMENTS = ['submit', '__spam_filter__'];
 
 const VALIDATORS = {
   text: value => value.length > 0,
@@ -15,7 +15,7 @@ export function getFormElements(
 ) {
   return Array.prototype.slice
     .call(document.forms[formName])
-    .filter(el => excludeNodes.indexOf(el.nodeName) === -1)
+    .filter(el => excludeNodes.indexOf(el.getAttribute('id')) === -1)
     .reduce((formObj, el) => {
       formObj[el.id] = el;
       return formObj;
