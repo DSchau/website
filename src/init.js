@@ -7,7 +7,7 @@ import {
   webFonts,
   handleForm,
   logToConsole,
-  romanize
+  replaceDate
 } from './util';
 
 export default function init() {
@@ -50,10 +50,7 @@ export default function init() {
 
   logToConsole();
   webFonts();
-
-  document.getElementById('year').innerHTML = romanize(
-    new Date().getFullYear()
-  );
+  replaceDate();
 
   return {
     destroy(str) {
