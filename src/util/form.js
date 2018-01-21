@@ -30,10 +30,7 @@ export function elementIsValid(element, validators = VALIDATORS) {
   return false;
 }
 
-export function validate(
-  invalidClassName = 'invalid',
-  ignore = ['__spam_filter__']
-) {
+export function validate(invalidClassName = 'invalid', ignore = ['missHoney']) {
   let focused = false;
   const inputs = getFormElements();
   const ids = Object.keys(inputs).filter(id => ignore.indexOf(id) === -1);
