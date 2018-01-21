@@ -1,4 +1,4 @@
-export const intToRoman = (num = new Date().getFullYear()) => {
+export const numToRoman = (num = new Date().getFullYear()) => {
   const romans = [
     'I',
     'IV',
