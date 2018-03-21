@@ -1,6 +1,6 @@
 # Website
 
-The repository for the latest iteration of [dustinschau.com][dustinschau]
+The repository for the latest iteration of [dustinschau.com][dustinschau] hosted with S3
 
 ## Tech Used
 
