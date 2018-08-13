@@ -58,34 +58,34 @@ async function run() {
         `https://api.github.com/graphql`,
         JSON.stringify({
           query: `
-      query {
-        user(login:"dschau") {
-            repositories(first:6, orderBy:{field:STARGAZERS, direction:DESC}) {
-              edges {
-                node {
-                  id
-                  name
-                  descriptionHTML
-                  createdAt
-                  url
-                  forkCount
-                  repositoryTopics(first:5) {
-                    edges {
-                      node {
-                        topic {
-                          name
+            query GetLatestRepositories {
+              user(login: "dschau") {
+                repositories(first: 6, orderBy: {field: STARGAZERS, direction: DESC}) {
+                  edges {
+                    node {
+                      id
+                      name
+                      descriptionHTML
+                      createdAt
+                      url
+                      forkCount
+                      repositoryTopics(first: 5) {
+                        edges {
+                          node {
+                            topic {
+                              name
+                            }
+                          }
                         }
                       }
+                      stargazers {
+                        totalCount
+                      }
                     }
-                  }
-                  stargazers {
-                    totalCount
                   }
                 }
               }
             }
-          }
-      }
       `
         }),
         {

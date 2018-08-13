@@ -2,12 +2,12 @@
  * https://stackoverflow.com/a/30638226
  **/
 export function detectDevtools(callback) {
-  const el = document.createElement('div');
-  Object.defineProperty(el, 'id', {
-    get: callback
-  });
+  let devtools = /./;
+  devtools.toString = function() {
+    callback();
+  };
 
-  console.log('%c Oh shit waddup!', el);
+  console.log('%c Oh shit waddup!', devtools);
 }
 
 export function logMessage() {
@@ -24,7 +24,7 @@ export function logMessage() {
   console.log(`%cFeel free to e-mail me at dustinschau@gmail.com`, styles);
 }
 
-export function logToConsole(env = 'production') {
+export function logToConsole(env = 'development') {
   if (process.env.NODE_ENV === env) {
     detectDevtools(logMessage);
   }
