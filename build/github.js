@@ -21,7 +21,7 @@ const template = items => `
             <h4 class="github-title">
               ${item.name}
               <a class="github-link" href="${item.url}" target="_blank" rel="noopener">
-                <i class="icon github-circled"></i>
+                <i class="icon-github-circled"></i>
               </a>
             </h4>
             <div class="github-content">
