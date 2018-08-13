@@ -18,4 +18,4 @@ fs
     return fs.writeFile(file, $.html(), 'utf8');
   })
   .then(() => process.exit())
-  .catch(e => console.warn(e));
+  .catch(console.warn);
