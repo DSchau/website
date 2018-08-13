@@ -3,9 +3,7 @@
  **/
 export function detectDevtools(callback) {
   const devtools = /./;
-  devtools.toString = function() {
-    callback();
-  };
+  devtools.toString = callback;
 
   console.log('%c Oh shit waddup!', devtools);
 }
