@@ -1,6 +1,6 @@
 @import "util";
 
-@mixin sections($loop-count: 4, $subtitle-effect: false) {
+@mixin sections($loop-count: 5, $subtitle-effect: false) {
   section {
     @include flex-center(true);
     min-height: 100vh;

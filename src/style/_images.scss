@@ -27,7 +27,7 @@
     @include absolute();
     background-size: cover;
     background-color: $blue-dark;
-    transition: all 250ms ease-in-out;
+    transition: 250ms ease-in-out;
     &:hover, &:active {
       background-color: transparent !important;
       filter: none;
