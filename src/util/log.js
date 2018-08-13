@@ -2,7 +2,7 @@
  * https://stackoverflow.com/a/30638226
  **/
 export function detectDevtools(callback) {
-  let devtools = /./;
+  const devtools = /./;
   devtools.toString = function() {
     callback();
   };
