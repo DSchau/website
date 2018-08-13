@@ -1,0 +1,99 @@
+$github-dark-grey: #333;
+$github-accent-bg: #fafbfc;
+$github-accent-border: #e1e4e8;
+
+$github-link-color: #0366d6;
+
+.github {
+  &.cards-container {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 100%;
+    color: #333;
+    @media only screen and (min-width: $lg-breakpoint) {
+      grid-template-columns: 50% 50%;
+    }
+    @media only screen and (min-width: $xlg-breakpoint) {
+      grid-template-columns: 33% 33% 33%;
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    margin: 0.5rem;
+    position: relative;
+    outline: 1px solid rgba(0, 0, 0, 0.65);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.175);
+  }
+
+  .github-title {
+    background-color: $github-dark-grey;
+    color: white;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    flex: 0 0 auto;
+  }
+
+  .github-description {
+    color: $github-dark-grey;
+    padding: 0.25rem 0.5rem;
+    margin: 0.5rem 0;
+    margin-bottom: 0.25rem;
+
+    line-height: 1.5;
+  }
+
+  .github-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.25rem;
+    background-color: $github-accent-bg;
+    border-top: 1px solid $github-accent-border;
+    flex: 0 0 auto;
+  }
+
+  .github-content {
+    flex: 1 1 auto;
+  }
+
+  .github-link {
+    color: white;
+    text-decoration: none;
+
+    position: absolute;
+    right: 0;
+  }
+
+  .github-tags {
+    margin: 0.5rem 0;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .github-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: normal;
+
+    background-color: #f1f8ff;
+    color: $github-link-color;
+    margin: 0.25rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .detail {
+    margin: 0.125rem 0.5rem;
+  }
+
+  .icon-star {
+    color: #333;
+  }
+
+  .icon-fork {
+    color: #333;
+  }
+}

@@ -11,12 +11,13 @@
 @import "style/tags";
 @import "style/typing";
 @import "style/work";
+@import "style/github";
 
 @include footer();
 @include images();
 @include form();
 @include arrows();
-@include sections(4);
+@include sections(5);
 @include tags();
 @include work();
 @include workExamples();
