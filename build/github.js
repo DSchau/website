@@ -20,7 +20,7 @@ const template = items => `
           <div class="github-card">
             <h4 class="github-title">
               ${item.name}
-              <a class="github-link" href="${item.url}" target="_blank" rel="noopener">
+              <a class="github-link" href="${item.url}" target="_blank" rel="noopener" aria-label="Github link to ${item.name}">
                 <i class="icon-github-circled"></i>
               </a>
             </h4>
