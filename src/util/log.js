@@ -2,12 +2,10 @@
  * https://stackoverflow.com/a/30638226
  **/
 export function detectDevtools(callback) {
-  const el = document.createElement('div');
-  Object.defineProperty(el, 'id', {
-    get: callback
-  });
+  const devtools = /./;
+  devtools.toString = callback;
 
-  console.log('%c Oh shit waddup!', el);
+  console.log('%c Oh shit waddup!', devtools);
 }
 
 export function logMessage() {
