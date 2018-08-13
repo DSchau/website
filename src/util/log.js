@@ -24,7 +24,7 @@ export function logMessage() {
   console.log(`%cFeel free to e-mail me at dustinschau@gmail.com`, styles);
 }
 
-export function logToConsole(env = 'development') {
+export function logToConsole(env = 'production') {
   if (process.env.NODE_ENV === env) {
     detectDevtools(logMessage);
   }
