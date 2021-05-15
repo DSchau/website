@@ -4743,6 +4743,17 @@ obuf@^1.0.0, obuf@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.1.tgz#104124b6c602c6796881a042541d36db43a5264e"
 
+offline-plugin@4.9.1:
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/offline-plugin/-/offline-plugin-4.9.1.tgz#e97a6be3118b4dc360e06ed4bc473f10f2de73b6"
+  integrity sha1-6Xpr4xGLTcNg4G7UvEc/EPLec7Y=
+  dependencies:
+    deep-extend "^0.4.0"
+    ejs "^2.3.4"
+    loader-utils "0.2.x"
+    minimatch "^3.0.3"
+    slash "^1.0.0"
+
 offline-plugin@~4.8.1:
   version "4.8.1"
   resolved "https://registry.yarnpkg.com/offline-plugin/-/offline-plugin-4.8.1.tgz#1d73457081185777179c29d9d416f71077a0197a"
