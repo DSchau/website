@@ -25,17 +25,6 @@ const outputFile = (
   launch = false,
   quality = 60
 ) => {
-  console.log('==================');
-  console.log(
-    JSON.stringify(
-      {
-        file
-      },
-      null,
-      2
-    )
-  );
-  console.log('==================');
   const name = file.split(src).pop().split('.').shift();
   const fileName = `${name.replace(new RegExp('-' + size), '')}${launch ? '-launch' : ''}.${extension}`;
 
@@ -50,6 +39,10 @@ const outputFile = (
 
 async function images() {
   try {
+    console.log({
+      sass_loader: '==================',
+      version: require('./node_modules/sass-loader/package.json').version
+    });
     await del(`${dest}/**/*`)
       .then(() => getFiles(src))
       .then(files => {
@@ -63,17 +56,6 @@ async function images() {
         });
       })
       .then(files => {
-        console.log('==================');
-        console.log(
-          JSON.stringify(
-            {
-              input: files
-            },
-            null,
-            2
-          )
-        );
-        console.log('==================');
         return Promise.all(
           files.map(file => {
             const size = parseInt(file.match(/-(\d+)/).pop());
