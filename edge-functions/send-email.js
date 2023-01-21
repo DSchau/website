@@ -1,3 +1,3 @@
 export default () => new Response('Hello world');
 
-export const config = { path: '/send-email' };
+export const config = { path: '/api/send-email' };
