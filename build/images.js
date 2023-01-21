@@ -25,6 +25,17 @@ const outputFile = (
   launch = false,
   quality = 60
 ) => {
+  console.log('==================');
+  console.log(
+    JSON.stringify(
+      {
+        file
+      },
+      null,
+      2
+    )
+  );
+  console.log('==================');
   const name = file.split(src).pop().split('.').shift();
   const fileName = `${name.replace(new RegExp('-' + size), '')}${launch ? '-launch' : ''}.${extension}`;
 
@@ -52,6 +63,17 @@ async function images() {
         });
       })
       .then(files => {
+        console.log('==================');
+        console.log(
+          JSON.stringify(
+            {
+              input: files
+            },
+            null,
+            2
+          )
+        );
+        console.log('==================');
         return Promise.all(
           files.map(file => {
             const size = parseInt(file.match(/-(\d+)/).pop());
