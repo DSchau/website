@@ -39,20 +39,6 @@ const outputFile = (
 
 async function images() {
   try {
-    console.log({
-      sass_loader: '==================',
-      sass_loader_version: require(path.join(
-        __dirname,
-        '..',
-        './node_modules/sass-loader/package.json'
-      )).version,
-      node_sass: '---------------',
-      node_sass_version: require(path.join(
-        __dirname,
-        '..',
-        './node_modules/node-sass/package.json'
-      )).version
-    });
     await del(`${dest}/**/*`)
       .then(() => getFiles(src))
       .then(files => {
