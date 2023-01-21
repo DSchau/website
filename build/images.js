@@ -9,6 +9,9 @@ const dest = path.resolve(__dirname, '..', 'static/images');
 
 const getFiles = src => {
   return new Promise((resolve, reject) => {
+    console.log('========================');
+    console.log(path.join(src, '*.{jpg,jpeg,gif,png}'));
+    console.log('========================');
     glob(path.join(src, '*.{jpg,jpeg,gif,png}'), (err, files) => {
       if (err) {
         return reject(err);
