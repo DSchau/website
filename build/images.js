@@ -28,19 +28,6 @@ const outputFile = (
   const name = file.split(src).pop().split('.').shift();
   const fileName = `${name.replace(new RegExp('-' + size), '')}${launch ? '-launch' : ''}.${extension}`;
 
-  console.log('========================');
-  console.log(
-    JSON.stringify(
-      {
-        file,
-        toFile: path.join(dest, fileName)
-      },
-      null,
-      2
-    )
-  );
-  console.log('========================');
-
   let stream = sharp(file).resize(launch ? 50 : size);
 
   if (launch) {
