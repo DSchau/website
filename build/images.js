@@ -36,30 +36,37 @@ const outputFile = (
   return stream[extension]({ quality }).toFile(path.join(dest, fileName));
 };
 
-del(`${dest}/**/*`)
-  .then(() => getFiles(src))
-  .then(files => {
-    return new Promise((resolve, reject) => {
-      return mkdir(dest, err => {
-        if (err) {
-          reject(err);
-        }
-        resolve(files);
-      });
-    });
-  })
-  .then(files => {
-    return Promise.all(
-      files.map(file => {
-        const size = parseInt(file.match(/-(\d+)/).pop());
-        return Promise.all([
-          outputFile(file, 'jpeg', size),
-          outputFile(file, 'jpeg', size, true),
-          outputFile(file, 'webp', size)
-        ]);
+async function images() {
+  try {
+    await del(`${dest}/**/*`)
+      .then(() => getFiles(src))
+      .then(files => {
+        return new Promise((resolve, reject) => {
+          return mkdir(dest, err => {
+            if (err) {
+              reject(err);
+            }
+            resolve(files);
+          });
+        });
       })
-    );
-  })
-  .then(() => {
-    console.log('All images written successfully');
-  });
+      .then(files => {
+        return Promise.all(
+          files.map(file => {
+            const size = parseInt(file.match(/-(\d+)/).pop());
+            return Promise.all([
+              outputFile(file, 'jpeg', size),
+              outputFile(file, 'jpeg', size, true),
+              outputFile(file, 'webp', size)
+            ]);
+          })
+        );
+      });
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+images().then(() => {
+  console.log('All images written successfully');
+});

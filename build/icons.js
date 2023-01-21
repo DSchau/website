@@ -14,29 +14,36 @@ const outputFile = ({ file, extension, size }) => {
   return sharp(file).resize(size).toFile(path.join(dest, fileName));
 };
 
-del(`${dest}/**/*`)
-  .then(() => {
-    return new Promise((resolve, reject) => {
-      return mkdir(dest, err => {
-        if (err) {
-          reject(err);
-        }
-        resolve();
-      });
-    });
-  })
-  .then(() => {
-    const file = path.join(src, 'icon.png');
-    return Promise.all(
-      sizes.map(size => {
-        return outputFile({
-          file,
-          extension: 'png',
-          size
+async function icons() {
+  try {
+    await del(`${dest}/**/*`)
+      .then(() => {
+        return new Promise((resolve, reject) => {
+          return mkdir(dest, err => {
+            if (err) {
+              reject(err);
+            }
+            resolve();
+          });
         });
       })
-    );
-  })
-  .then(() => {
-    console.log('All icons written successfully');
-  });
+      .then(() => {
+        const file = path.join(src, 'icon.png');
+        return Promise.all(
+          sizes.map(size => {
+            return outputFile({
+              file,
+              extension: 'png',
+              size
+            });
+          })
+        );
+      });
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+icons().then(() => {
+  console.log('All icons written successfully');
+});
