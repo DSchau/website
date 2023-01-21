@@ -3,8 +3,8 @@ const path = require('path');
 const mkdir = require('mkdirp');
 const del = require('del');
 
-const src = path.resolve('./src/assets/icons');
-const dest = path.resolve('./dist/assets/icons');
+const src = path.join(__dirname, '..', './src/assets/icons');
+const dest = path.join(__dirname, '..', './dist/assets/icons');
 
 const sizes = [512, 384, 256, 192];
 

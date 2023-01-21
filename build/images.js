@@ -4,8 +4,8 @@ const mkdir = require('mkdirp');
 const glob = require('glob');
 const del = require('del');
 
-const src = path.resolve('./src/assets/images');
-const dest = path.resolve('./static/images');
+const src = path.join(__dirname, '..', 'src/assets/images');
+const dest = path.resolve(__dirname, '..', 'static/images');
 
 const getFiles = src => {
   return new Promise((resolve, reject) => {
