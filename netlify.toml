@@ -1,2 +1,2 @@
-[functions]
-  directory = "functions/"
+[build]
+  edge_functions = "edge-functions"
