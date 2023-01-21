@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "precommit": "lint-staged",
-    "prebuild": "del-cli \"dist/**/*\" && npm run images & npm run icons & npm run lint",
+    "prebuild": "del-cli \"dist/**/*\" && npm run images && npm run icons",
     "build": "cross-env NODE_ENV=production webpack --env.environment production --hide-modules",
     "postbuild": "node build/critical && node build/github",
     "format": "prettier --write --single-quote \"src/**/*.js\"",
