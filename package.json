@@ -24,7 +24,7 @@
     "ityped": "~0.0.10",
     "minireset.css": "~0.0.3",
     "normalize.css": "~7.0.0",
-    "offline-plugin": "~4.8.1",
+    "offline-plugin": "~4.9.0",
     "smoothscroll-polyfill": "~0.3.5",
     "unfetch": "~2.1.2",
     "webfontloader": "~1.6.28"
